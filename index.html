@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jani Orbinski | Sound Design Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        function toggleDescription(button) {
+            const description = button.previousElementSibling; 
+            const moreText = description.querySelector('.more-text'); 
+
+            if (moreText.style.display === 'inline') {
+                moreText.style.display = 'none'; 
+                button.textContent = 'Read more'; 
+            } else {
+                moreText.style.display = 'inline'; 
+                button.textContent = 'Read less'; 
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/orbinskiAudioBlack.png" alt="Logo" class="logo">
+        </div>
+        <div class="headline-container">
+            <h1>JANI ORBINSKI</h1>
+            <h2>Sound Designer / Composer / Sound Artist</h2>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Works</a></li>
+            <li><a href="#portfolio">Music Portfolio</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="about" style="display: flex; align-items: center; gap: 20px;">
+            <!-- Image Column -->
+            <div style="flex: 1;">
+                <img src="images/jani_selfie_ravintola_EDIT.jpg" alt="Jani Orbinski" style="max-width: 100%; border-radius: 10px;">
+            </div>
+                
+            <!-- Text Column -->
+            <div style="flex: 2;">
+                <h1>About Jani</h1>
+                <p>Jani Orbinski (TeM) is a finnish sound designer, composer, and sound artist who transforms stories into unforgettable sonic journeys. With a deep understanding of RHYTHM and FLOW, Jani uses his musical roots to create soundscapes that pulse with ENERGY and EMOTION, elevating the listener’s experience.</p>
+                <p>From crafting gripping audio for radio plays and theater productions to composing evocative music that stands alone or complements adaptive soundscapes for games, Jani brings PRECISION, CREATIVITY, and a PASSION for innovation to every project. His expertise shines in his ability to seamlessly blend storytelling with sound, creating works that resonate on a gut level.</p>
+                <p>In the realm of sound art, Jani embraces technology as a creative partner. By leveraging platforms like Max/MSP and Python, he develops generative and interactive audio experiences that push artistic boundaries and invite audiences to ENGAGE with SOUND in new ways.</p>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <h1>WORKS</h1>
+            <h2>YLE | Finnish Broadcasting Company</h2>
+            <p>Selected sound design and compositional projects for YLE. Click on an image to be directed to Yle Areena, where you can listen to the featured program.</p>
+            <!-- Subgroup 1 -->
+            <div class="gallery-group">
+                <h3>Audio Series</h3>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <a href="https://areena.yle.fi/podcastit/1-70935222" target="_blank">
+                            <img src="images/tjj_square.avif" alt="Projektikuva 1">
+                            <div class="overlay">
+                                <p>Tykkää ja jaa</p>
+                                <p>.</p>
+                                <p>Sound Design and Original Music</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="https://areena.yle.fi/podcastit/1-66020022" target="_blank">
+                            <img src="images/itkupla_square.avif" alt="Projektikuva 2">
+                            <div class="overlay">
+                                <p>it-kupla.net</p>
+                                <p>.</p>
+                                <p>Sound Design and Original Music</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="https://areena.yle.fi/podcastit/1-50588944" target="_blank">
+                            <img src="images/ihmissyoja_square.avif" alt="Projektikuva 3">
+                            <div class="overlay">
+                                <p>IHMISSYÖJÄ</p>
+                                <p>.</p>
+                                <p>Sound Design and Original Music</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="https://areena.yle.fi/podcastit/1-50932531" target="_blank">
+                            <img src="images/riskiretket_square.avif" alt="Projektikuva 4">
+                            <div class="overlay">
+                                <p>RISKIRETKET</p>
+                                <p>.</p>
+                                <p>Sound Design and editing.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Subgroup 2 -->
+            <div class="gallery-group">
+                <h3>Radio Plays</h3>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <a href="https://areena.yle.fi/podcastit/1-50788103" target="_blank">
+                            <img src="images/jos_koskettaisin_square.avif" alt="Projektikuva 1">
+                            <div class="overlay">Jos koskettaisin</div>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="https://areena.yle.fi/podcastit/1-50277667" target="_blank">
+                            <img src="images/liv_square.avif" alt="Projektikuva 1">
+                            <div class="overlay">Liv</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Subgroup 3 -->
+            <div class="gallery-group">
+                <h3>Music Series</h3>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <a href="https://areena.yle.fi/podcastit/1-50525521" target="_blank">
+                            <img src="images/antti_holma_square.avif" alt="Projektikuva 1">
+                            <div class="overlay">Antti Holma</div>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="https://areena.yle.fi/podcastit/1-50820854" target="_blank">
+                            <img src="images/silvennoisen_euroviisut_square.avif" alt="Projektikuva 1">
+                            <div class="overlay">Silvennoisen Euroviisut</div>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="https://areena.yle.fi/podcastit/1-50217163" target="_blank">
+                            <img src="images/8klasaria_square.avif" alt="Projektikuva 1">
+                            <div class="overlay">8 Klasaria</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Subgroup 4 -->
+            <div class="gallery-group">
+                <h3>Documents</h3>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <a href="https://areena.yle.fi/podcastit/1-68480691" target="_blank">
+                            <img src="images/pacifique_square.avif" alt="Projektikuva 3">
+                            <div class="overlay">Pacifique</div>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="https://areena.yle.fi/podcastit/1-66921590" target="_blank">
+                            <img src="images/hyva_elama.avif" alt="Projektikuva 4">
+                            <div class="overlay">Hyvä Elämä</div>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="https://areena.yle.fi/podcastit/1-66921596" target="_blank">
+                            <img src="images/neuroepatyypilliset.avif" alt="Projektikuva 5">
+                            <div class="overlay">Neuroepätyypilliset</div>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="https://areena.yle.fi/podcastit/1-64593959" target="_blank">
+                            <img src="images/inhimillisyytta_square.avif" alt="Projektikuva 5">
+                            <div class="overlay">Inhimillisyyttä</div>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="https://areena.yle.fi/podcastit/1-66489856" target="_blank">
+                            <img src="images/unettomat_square.avif" alt="Projektikuva 5">
+                            <div class="overlay">Unettomat</div>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="https://areena.yle.fi/podcastit/1-65304860" target="_blank">
+                            <img src="images/muu_kuin_mies_square.avif" alt="Projektikuva 5">
+                            <div class="overlay">Muu kuin mies</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Subgroup 5 -->
+            <div class="gallery-group">
+                <h3>Audio Essays and Sound Art</h3>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <a href="https://areena.yle.fi/podcastit/1-67309184" target="_blank">
+                            <img src="images/vuosi_kauppakeskuksessa_square.avif" alt="Projektikuva 4">
+                            <div class="overlay">Vuosi Kauppakeskuksessa</div>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="https://areena.yle.fi/podcastit/1-50989543" target="_blank">
+                            <img src="images/suvun_seurassa_square.avif" alt="Projektikuva 5">
+                            <div class="overlay">Suvun Seurassa</div>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="https://areena.yle.fi/podcastit/1-50463831" target="_blank">
+                            <img src="images/minun_venajani_square.avif" alt="Projektikuva 5">
+                            <div class="overlay">Minun Venäjäni</div>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="https://areena.yle.fi/podcastit/1-50989568" target="_blank">
+                            <img src="images/maisemakuvia_square.avif" alt="Projektikuva 6">
+                            <div class="overlay">Maisemakuvia</div>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="https://areena.yle.fi/podcastit/1-50748838" target="_blank">
+                            <img src="images/populismi_square.avif" alt="Projektikuva 6">
+                            <div class="overlay">Populismi</div>
+                        </a>
+                    </div>
+                    <div class="gallery-item">
+                        <a href="https://areena.yle.fi/podcastit/1-4429999" target="_blank">
+                            <img src="images/kiinalaisia_tarinoita_square.avif" alt="Projektikuva 6">
+                            <div class="overlay">Kiinalaisia Tarinoita</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        ``
+        
+
+        <section id="portfolio">
+            <h1>Music Portfolio</h1>
+            <div class="audio-item">
+                <h3>Blinking Auras</h3>
+                <p class="audio-description">
+                    This is a brief description of the sound. <span class="more-text">Here is the expanded detail about
+                        the sound, including how it was created or where it might be used. This text is hidden by
+                        default.</span>
+                </p>
+                <button class="expand-btn" onclick="toggleDescription(this)">Read more</button>
+                <audio controls>
+                    <source src="sounds/BlinkingAuras.wav" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            <div class="audio-item">
+                <h3>Moods</h3>
+                <p class="audio-description">
+                    Another short description. <span class="more-text">Here is more detail about the sound's creative
+                        process and potential applications. Hidden by default.</span>
+                </p>
+                <button class="expand-btn" onclick="toggleDescription(this)">Read more</button>
+                <audio controls>
+                    <source src="sounds/Moods_MIX30042024.wav" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            <div class="audio-item">
+                <h3>Haippi (Hype)</h3>
+                <p class="audio-description">
+                    Another short description. <span class="more-text">Here is more detail about the sound's creative
+                        process and potential applications. Hidden by default.</span>
+                </p>
+                <button class="expand-btn" onclick="toggleDescription(this)">Read more</button>
+                <audio controls>
+                    <source src="sounds/Haippi_demo03042024.wav" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <div class="audio-item">
+                <h3>Anywhere you wanna go</h3>
+                <p class="audio-description">
+                    Made for it-kupla.net (Yle) <span class="more-text">This is pure Piripolkka like we say in Finland</span>
+                </p>
+                <button class="expand-btn" onclick="toggleDescription(this)">Read more</button>
+                <audio controls>
+                    <source src="sounds/Anywhere you wanna go_Full mix.wav" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <div class="audio-item">
+                <h3>Kesäpäivä Toimistolla</h3>
+                <p class="audio-description">
+                    Made for it.kupla.net (Yle) <span class="more-text">This was one of the last songs I made for this series. Since I was also Sound Designer for this project, I knew we will need something very chill for the moments where sun is shining before the Y2K crash.</span>
+                </p>
+                <button class="expand-btn" onclick="toggleDescription(this)">Read more</button>
+                <audio controls>
+                    <source src="sounds/KesäpäiväToimistolla.wav" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <div class="audio-item">
+                <h3>Rytsölä Bash</h3>
+                <p class="audio-description">
+                    Made for it.kupla.net (Yle) <span class="more-text">One of the main themes from the series. There was strong influence taken from the late 90's video game(s).</span>
+                </p>
+                <button class="expand-btn" onclick="toggleDescription(this)">Read more</button>
+                <audio controls>
+                    <source src="sounds/Rytsölä Bash.wav" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <div class="audio-item">
+                <h3>Rytsölä Island</h3>
+                <p class="audio-description">
+                    Made for it.kupla.net (Yle) <span class="more-text">This one I tried to compose so, that it can be used adaptively like in games.</span>
+                </p>
+                <button class="expand-btn" onclick="toggleDescription(this)">Read more</button>
+                <audio controls>
+                    <source src="sounds/Rytsölä Island.wav" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <div class="audio-item">
+                <h3>Rytsölä Chill</h3>
+                <p class="audio-description">
+                    Made for it.kupla.net (Yle) <span class="more-text">Chill and groove</span>
+                </p>
+                <button class="expand-btn" onclick="toggleDescription(this)">Read more</button>
+                <audio controls>
+                    <source src="sounds/Rytsölä Chill.wav" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h1>Skills and Knowledge</h1>
+            <div class="skill-category">
+                <h3>Instruments</h3>
+                <ul>
+                    <li>Piano</li>
+                    <li>Keyboards and synths</li>
+                    <li>Vocals</li>
+                    <li>Piano Accordion</li>
+                    <li>Drums and percussions (such as Tongue Drum)</li>
+                    <li>Little bit of Guitar and Bass</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Music Genres and Composition</h3>
+                <ul>
+                    <li>Songwriting</li>
+                    <li>Rock and pop</li>
+                    <li>Ambient Music</li>
+                    <li>Hip Hop and beats</li>
+                    <li>Interactive Music Composition</li>
+                    <li>Sound Design for Games</li>
+                    <li>Sonic Oddities</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Audio Tools and Software</h3>
+                <ul>
+                    <li>Pro Tools</li>
+                    <li>Ableton Live</li>
+                    <li>Logic Pro X</li>
+                    <li>FMOD Studio (learning it)</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Programming Languages</h3>
+                <ul>
+                    <li>Max/MSP Patcher Language</li>
+                    <li>Python</li>
+                    <li>HTML and CSS</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Additional Knowledge</h3>
+                <ul>
+                    <li>Field Recording</li>
+                    <li>Sound Editing, Mixing and Mastering</li>
+                    <li>Vast experience on Studio Technology</li>
+                    <li>Directing Actors in Studio</li>
+                    <li>PA and live sound systems</li>
+                    <li>Instrument building</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h1>Contact</h1>
+            <p>Drop me a message or call me:</p>
+            <ul>
+                <li>Email: <a href="mailto:jani.orbinski@gmail.com">jani.orbinski@gmail.com</a></li>
+                <li>Phone: +358503435328</li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/janiorbinski/" target="_blank">linkedin.com/in/janiorbinski/</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Jani Orbinski. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

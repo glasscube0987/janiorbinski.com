@@ -1,0 +1,323 @@
+/* Fontit */
+@font-face {
+  font-family: 'Null';
+  src: url('fonts/Null-Normal.otf') format('otf'),
+       url('fonts/Null-Normal.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  font-family: 'Null', sans-serif;
+  font-size: 4rem;
+  font-weight: 200;
+  margin-bottom: 1px;
+  text-align: center;
+  color: #898121;
+}
+
+body {
+  font-family: 'Raleway', sans-serif; /* Leipäteksti */
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #dcdcdc; /* gray tint */
+}
+
+
+
+/* Header layout */
+header {
+  display: flex;
+  align-items: center; /* Vertically align logo and headline container */
+  position: relative; /* Needed to position the headline container absolutely */
+  padding: 5rem 2rem;
+  background-image: url('images/zoom_puro.jpg'); /* Background image */
+  background-size: cover;
+  background-position: 50% 60%;
+  color: #fff;
+}
+
+/* Logo container */
+.logo-container {
+  flex: 0; /* Prevent logo from affecting centering */
+}
+
+.logo {
+  height: 100px; /* Adjust logo size */
+  margin-right: 1rem;
+}
+
+/* Headline container */
+.headline-container {
+  position: absolute; /* Remove it from the normal document flow */
+  left: 50%; /* Start at the horizontal center */
+  transform: translateX(-50%); /* Correct for the width of the container */
+  text-align: center; /* Center text inside the container */
+}
+
+.headline-container h1 {
+  font-family: 'Null', sans-serif;
+  font-size: 4.5rem;
+  margin: 0;
+  font-weight: 300;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  color: #fff;
+}
+
+.headline-container h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.4rem;
+  margin-top: 0.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  color: #e9e7e7; /* A lighter color for distinction */
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  background-color: #333;
+  padding: 0.7rem 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 1.5rem;
+}
+
+nav ul li a {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  color: #f0f0f0;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+nav ul li a:hover {
+  color: #F87A53;
+}
+
+main {
+  background-color: #ffffff; /* Keep the main content area white for contrast */
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add subtle shadow for depth */
+  border-radius: 8px; /* Optional: Rounded corners for modern style */
+  margin: 1rem auto;
+  max-width: 900px;
+}
+
+main p, .portfolio-item p, #contact ul li {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  #about {
+      flex-direction: column;
+      text-align: center;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #444;
+  text-align: center;
+}
+
+/* General styling for the portfolio section */
+#audio-item {
+  margin-bottom: 1.5rem;
+}
+
+/* Styling for each audio item's header */
+.audio-item h3 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+/* Customize audio players */
+audio {
+  width: 70%; /* Full width for responsiveness */
+  height: 25px; /* Reduce height to make it compact */
+  outline: none; /* Optional: Remove default focus styles */
+}
+
+/* Styling for audio item descriptions */
+.audio-description {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  color: #555; /* Subtle gray to keep focus on titles and audio players */
+  margin: 0rem 0; /* Spacing above and below */
+  line-height: 1.5; /* Improve readability */
+}
+
+.more-text {
+  display: none; /* Hidden by default */
+}
+
+.expand-btn {
+  background-color: #4C4B16;
+  color: #fff;
+  border: none;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0.3rem 0;
+  transition: background-color 0.3s ease;
+}
+
+.expand-btn:hover {
+  background-color: #898121;
+}
+
+#gallery {
+  text-align: center;
+}
+
+.gallery {
+  display: flex;
+  gap: 1rem;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+.gallery a {
+  display: inline-block;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  width: 170px; /* Image size here */
+  height: 170px;
+}
+
+.gallery-item img {
+  display: block; /* Ensures proper scaling */
+  width: 100%; /* Makes image fill the container */
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.gallery-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item .overlay p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+.gallery-item:hover img {
+  filter: brightness(0.7);
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+
+.gallery-group {
+  margin-bottom: 1rem;
+}
+
+.gallery-group h3 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2rem;
+  color: #4C4B16; /* Accent color for sub-headlines */
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.gallery img {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for Skills and Knowledge section */
+#skills {
+  padding: 2rem 0;
+}
+
+#skills h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.skill-category {
+  margin-bottom: 0.5rem;
+}
+
+.skill-category h3 {
+  font-size: 1.5rem;
+  color: #333; /* Accent color for category titles */
+  margin-bottom: 0.5rem;
+}
+
+.skill-category ul {
+  list-style-type: none; /* Remove default bullets */
+  padding: 0;
+  margin: 0;
+}
+
+.skill-category li {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.skill-category li::before {
+  content: "• "; /* Bullet point */
+  color: #F87A53; /* Accent color for bullet points */
+}
+
+#contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+#contact ul li {
+  margin: 0.5rem 0;
+}
+
+/* Style links in the contact section */
+#contact a {
+  color: #4C4B16; /* Change to your desired color */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Optional: make the text bold */
+}
+
+#contact a:hover {
+  color: #898121; /* Darker shade for hover effect */
+  text-decoration: underline; /* Optional: add underline on hover */
+}
+
+footer p {
+  font-size: 0.9rem;
+  margin: 0;
+}
