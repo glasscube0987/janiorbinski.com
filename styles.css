@@ -1,3 +1,11 @@
+:root {
+  --primary-bg: #0B0C10;
+  --secondary-bg: #1F2833;
+  --text-color: #C5C6C7;
+  --accent-color: #66FCF1;
+  --accent-muted: #45A29E;
+}
+
 /* Fontit */
 @font-face {
   font-family: 'Null';
@@ -14,15 +22,15 @@ h1 {
   margin-bottom: 1px;
   margin-top: 0;
   text-align: center;
-  color: #898121;
+  color: var(--accent-color);
 }
 
 body {
   font-family: 'Raleway', sans-serif; /* Leipäteksti */
   margin: 0;
   padding: 0;
-  color: #333;
-  background-color: #dcdcdc; /* gray tint */
+  color: var(--text-color);
+  background-color: var(--primary-bg); /* gray tint */
 }
 
 
@@ -34,18 +42,18 @@ header {
   /*position: relative; /* Needed to position the headline container absolutely */
   padding: 8rem 2rem;
   text-align: center; /* Ensures elements remain central on smaller screens */
-  background-color: #898121;
-  background-image: url('images/zoom_puro.jpg'); /* Background image */
+  /*background-color: #898121; */
+  background-image: url('images/iltarusko.jpg'), linear-gradient(rgba(150, 71, 52, 0.9), rgba(15, 164, 175, 0.9)); /* Add a gradient */
   background-size: cover;
+  background-blend-mode: overlay; /* Other options: multiply, screen, darken, lighten */
   background-position: 50% 60%;
   color: #fff;
 }
 
-
-
 /* Headline container */
 .headline-container {
   position: absolute; /* Remove it from the normal document flow */
+  z-index: 2;
   left: 50%; /* Start at the horizontal center */
   transform: translateX(-50%); /* Correct for the width of the container */
   text-align: center; /* Center text inside the container */
@@ -72,13 +80,13 @@ nav ul {
   display: flex;
   justify-content: center;
   list-style: none;
-  background-color: #4C4B16;
+  background-color: var(--primary-bg);
   padding: 0.7rem 0;
-  margin: 0;
+  margin-bottom: 0;
 }
 
 nav ul li {
-  margin: 0 1.5rem;
+  margin: 0 1.3rem;
 }
 
 nav ul li a {
@@ -90,7 +98,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #F87A53;
+  color: var(--accent-color);
 }
 
 @media (max-width: 768px) {
@@ -105,7 +113,7 @@ nav ul li a:hover {
 }
 
 main {
-  background-color: #ffffff; /* Keep the main content area white for contrast */
+  background-color: var(--secondary-bg); /* Keep the main content area white for contrast */
   padding: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add subtle shadow for depth */
   border-radius: 8px; /* Optional: Rounded corners for modern style */
@@ -131,66 +139,17 @@ main p, .portfolio-item p, #contact ul li {
   }
 }
 
-
 h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
   margin-top: 0;
-  color: #444;
+  color: var(--accent-muted);
   text-align: center;
-}
-
-/* General styling for the portfolio section */
-#audio-item {
-  margin-bottom: 1.5rem;
-}
-
-/* Styling for each audio item's header */
-.audio-item h3 {
-  font-family: 'Raleway', sans-serif;
-  font-size: 1.1rem;
-  margin: 0.5rem 0;
-  color: #333;
-}
-
-/* Customize audio players */
-audio {
-  width: 70%; /* Full width for responsiveness */
-  height: 25px; /* Reduce height to make it compact */
-  outline: none; /* Optional: Remove default focus styles */
-}
-
-/* Styling for audio item descriptions */
-.audio-description {
-  font-family: 'Raleway', sans-serif;
-  font-size: 1rem;
-  color: #555; /* Subtle gray to keep focus on titles and audio players */
-  margin: 0rem 0; /* Spacing above and below */
-  line-height: 1.5; /* Improve readability */
-}
-
-.more-text {
-  display: none; /* Hidden by default */
-}
-
-.expand-btn {
-  background-color: #4C4B16;
-  color: #fff;
-  border: none;
-  padding: 0.2rem 0.4rem;
-  font-size: 0.9rem;
-  cursor: pointer;
-  border-radius: 5px;
-  margin: 0.3rem 0;
-  transition: background-color 0.3s ease;
-}
-
-.expand-btn:hover {
-  background-color: #898121;
 }
 
 #gallery {
   text-align: center;
+  margin-top: 100px;
 }
 
 @media (max-width: 768px) {
@@ -237,13 +196,13 @@ audio {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(76, 75, 22, 0.5); /* Dark overlay */
+  background: rgba(31, 40, 51, 0.5); /* Dark overlay */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   opacity: 0;
-  color: white;
+  color: var(--text-color);
   font-size: 16px;
   font-weight: bold;
   text-align: center;
@@ -272,7 +231,7 @@ audio {
 .gallery-group h3 {
   font-family: 'Raleway', sans-serif;
   font-size: 2rem;
-  color: #4C4B16; /* Accent color for sub-headlines */
+  color: var(--text-color); /* Accent color for sub-headlines */
   margin-bottom: 0.5rem;
   text-align: left;
 }
@@ -281,6 +240,104 @@ audio {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* General styling for the Music portfolio section */
+#audio-item {
+  margin-bottom: 1.5rem;
+}
+
+/* Styling for each audio item's header */
+.audio-item h3 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  color: var(--text-color);
+}
+
+/* Customize audio players */
+audio {
+  width: 90%; /* Full width for responsiveness */
+  height: 25px; /* Reduce height to make it compact */
+  outline: none; /* Optional: Remove default focus styles */
+}
+
+/* Styling for audio item descriptions */
+.audio-description {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  color: #b9b9b9; /* Subtle gray to keep focus on titles and audio players */
+  margin: 0rem 0; /* Spacing above and below */
+  line-height: 1.5; /* Improve readability */
+}
+
+.more-text {
+  display: none; /* Hidden by default */
+}
+
+.expand-btn {
+  background-color: var(--accent-color);
+  color: var(--primary-bg);
+  border: none;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0.3rem 0;
+  transition: background-color 0.3s ease;
+}
+
+.expand-btn:hover {
+  background-color: var(--accent-muted);
+}
+
+.full-image {
+  height: 400px;
+  background-size: cover;
+  background-position: 50% 55%;
+  border-radius: 8px;
+}
+
+.image-section {
+  position: relative;
+  text-align: center; /* Centers the image */
+  padding: 2rem 0; /* Adds space above and below the image */
+  /*background-color: #f5f5f5; /* Optional: A subtle background color for contrast */
+}
+
+.image-section img {
+  max-width: 300px; /* Adjust the size of the image */
+  width: 100%; /* Ensures responsiveness */
+  height: auto; /* Maintains the aspect ratio */
+  border-radius: 50%; /* Makes the image circular */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a shadow for depth */
+  object-fit: cover;
+  opacity: 100%;
+  z-index: 0;
+}
+
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden; /* Ensures the overlay is confined */
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+.image-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 128, 128, 0.2); /* Teal tint */
+  z-index: 1;
+}
+
 
 /* Styling for Skills and Knowledge section */
 #skills {
@@ -291,7 +348,7 @@ audio {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #333;
+  color: var(--text-color);
 }
 
 .skill-category {
@@ -300,7 +357,7 @@ audio {
 
 .skill-category h3 {
   font-size: 1.5rem;
-  color: #333; /* Accent color for category titles */
+  color: var(--accent-color); /* Accent color for category titles */
   margin-bottom: 0.5rem;
 }
 
@@ -312,13 +369,13 @@ audio {
 
 .skill-category li {
   font-size: 1rem;
-  color: #333;
+  color: var(--text-color);
   margin-bottom: 0.5rem;
 }
 
 .skill-category li::before {
   content: "• "; /* Bullet point */
-  color: #F87A53; /* Accent color for bullet points */
+  color: var(--accent-color); /* Accent color for bullet points */
 }
 
 #contact ul {
@@ -332,13 +389,13 @@ audio {
 
 /* Style links in the contact section */
 #contact a {
-  color: #4C4B16; /* Change to your desired color */
+  color: var(--accent-color); /* Change to your desired color */
   text-decoration: none; /* Remove underline */
   font-weight: bold; /* Optional: make the text bold */
 }
 
 #contact a:hover {
-  color: #898121; /* Darker shade for hover effect */
+  color: var(--accent-muted); /* Darker shade for hover effect */
   text-decoration: underline; /* Optional: add underline on hover */
 }
 
