@@ -139,6 +139,10 @@ main p, .portfolio-item p, #contact ul li {
   }
 }
 
+.highlight {
+  color: var(--accent-color); /* Custom color for the highlighted text */
+}
+
 h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
