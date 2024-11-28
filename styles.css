@@ -71,7 +71,7 @@ header {
 .headline-container h2 {
   font-family: 'Raleway', sans-serif;
   font-size: 1.4rem;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
   color: #e9e7e7; /* A lighter color for distinction */
 }
@@ -81,7 +81,7 @@ nav ul {
   justify-content: center;
   list-style: none;
   background-color: var(--primary-bg);
-  padding: 0.7rem 0;
+  padding: 0.7rem 0rem;
   margin-bottom: 0;
 }
 
@@ -149,7 +149,7 @@ h2 {
 
 #gallery {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 4rem;
 }
 
 @media (max-width: 768px) {
@@ -203,21 +203,26 @@ h2 {
   align-items: center;
   opacity: 0;
   color: var(--text-color);
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: bold;
   text-align: center;
+  padding: 0.5rem; /* Add padding for space between text and edges */
+  box-sizing: border-box; /* Ensures padding doesn’t overflow */
   transition: opacity 0.3s ease;
+  border-radius: 8px;
 }
 
 .gallery-item .overlay p {
   margin: 0;
   padding: 0;
-  line-height: 1.5;
+  line-height: 1.2;
+  max-width: 95%; /* Ensures text doesn’t span the entire width */
+  word-wrap: break-word; /* Wraps long words to avoid overflow */
 }
 
 .gallery-item:hover img {
   filter: brightness(0.7);
-  transform: scale(1.05); /* Slight zoom effect */
+  transform: scale(1.00); /* Slight zoom effect */
 }
 
 .gallery-item:hover .overlay {
@@ -282,8 +287,9 @@ audio {
   font-size: 0.9rem;
   cursor: pointer;
   border-radius: 5px;
-  margin: 0.3rem 0;
+  margin: 0rem 0rem;
   transition: background-color 0.3s ease;
+
 }
 
 .expand-btn:hover {
