@@ -3,7 +3,7 @@
   --secondary-bg: #1F2833;
   --text-color: #C5C6C7;
   --accent-color: #66FCF1;
-  --accent-muted: #45A29E;
+  --accent-muted: #4ac3bd;
 }
 
 /* Fontit */
@@ -40,7 +40,7 @@ header {
   display: flex;
   align-items: center; /* Vertically align logo and headline container */
   /*position: relative; /* Needed to position the headline container absolutely */
-  padding: 8rem 2rem;
+  padding: 10rem 4rem;
   text-align: center; /* Ensures elements remain central on smaller screens */
   /*background-color: #898121; */
   background-image: url('images/iltarusko.jpg'), linear-gradient(rgba(150, 71, 52, 0.9), rgba(15, 164, 175, 0.9)); /* Add a gradient */
@@ -86,7 +86,7 @@ nav ul {
 }
 
 nav ul li {
-  margin: 0 1.3rem;
+  margin: 0 1rem;
 }
 
 nav ul li a {
@@ -94,7 +94,7 @@ nav ul li a {
   font-weight: 600;
   color: #f0f0f0;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 nav ul li a:hover {
@@ -220,6 +220,8 @@ h2 {
   margin: 0;
   padding: 0;
   line-height: 1.2;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
   max-width: 95%; /* Ensures text doesn’t span the entire width */
   word-wrap: break-word; /* Wraps long words to avoid overflow */
 }
@@ -248,6 +250,10 @@ h2 {
 .gallery img {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#portfolio {
+  margin-top: 7rem;
 }
 
 /* General styling for the Music portfolio section */
@@ -303,14 +309,18 @@ audio {
 .full-image {
   height: 400px;
   background-size: cover;
-  background-position: 50% 55%;
+  background-position: 50% 60%;
   border-radius: 8px;
+  background-image: 
+    linear-gradient(to bottom, rgba(15, 164, 175, 0.5), rgba(150, 71, 52, 0.6)), /* Gradient overlay */
+    url('images/zoom_puro.jpg'); /* Background image */
+  background-position: center; /* Centers the image */
 }
 
 .image-section {
   position: relative;
   text-align: center; /* Centers the image */
-  padding: 2rem 0; /* Adds space above and below the image */
+  padding: 6rem 0; /* Adds space above and below the image */
   /*background-color: #f5f5f5; /* Optional: A subtle background color for contrast */
 }
 
@@ -351,7 +361,18 @@ audio {
 
 /* Styling for Skills and Knowledge section */
 #skills {
-  padding: 2rem 0;
+  padding: 0rem 0;
+  margin-top: 0rem;
+}
+
+#skills h1 p{
+  font-family: 'Null', sans-serif;
+  font-size: 4rem;
+  font-weight: 200;
+  margin-bottom: 1px;
+  margin-top: 0;
+  text-align: center;
+  color: var(--accent-color);
 }
 
 #skills h2 {
@@ -388,6 +409,10 @@ audio {
   color: var(--accent-color); /* Accent color for bullet points */
 }
 
+#contact {
+  margin-top: 5rem;
+}
+
 #contact ul {
   list-style: none;
   padding: 0;
@@ -411,5 +436,6 @@ audio {
 
 footer p {
   font-size: 0.9rem;
-  margin: 0;
+  margin-bottom: 1rem;
+  text-align: center;
 }
