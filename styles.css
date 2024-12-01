@@ -409,6 +409,38 @@ audio {
   color: var(--accent-color); /* Accent color for bullet points */
 }
 
+#back-to-top {
+  position: fixed; /* Keeps it in a fixed position */
+  bottom: 20px; /* Distance from the bottom */
+  right: 20px; /* Distance from the right */
+  background-color: var(--accent-muted); /* Matches your site's color scheme */
+  color: var(--primary-bg); /* Text color */
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  border: none;
+  border-color: var(--primary-bg);
+  padding: 6px 11px; /* Adds space inside the button */
+  font-size: 14px; /* Adjusts text size */
+  border-radius: 5px; /* Adds rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional: Adds shadow */
+  cursor: pointer; /* Makes it look clickable */
+  opacity: 0; /* Initially hidden */
+  visibility: hidden; /* Hides the button when not needed */
+  transition: opacity 0.8s ease, visibility 0.8s ease; /* Smooth appearance */
+}
+
+#back-to-top.show {
+  opacity: 1; /* Visible when scrolled down */
+  visibility: visible;
+}
+
+#back-to-top:hover {
+  background-color: var(--accent-color); /* Slightly lighter color */
+  color: var(--text-color);
+}
+
+
+
 #contact {
   margin-top: 5rem;
 }
