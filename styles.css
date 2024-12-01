@@ -436,7 +436,6 @@ audio {
 
 #back-to-top:hover {
   background-color: var(--accent-color); /* Slightly lighter color */
-  color: var(--text-color);
 }
 
 
