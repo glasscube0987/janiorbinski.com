@@ -5,7 +5,7 @@ window.addEventListener('scroll', () => {
     backToTopButton.classList.add('show');
   } else {
     backToTopButton.classList.remove('show');
-    backToTopButton.classList.remove('hover')
+    backToTopButton.classList.remove('hover');
   }
 });
 
