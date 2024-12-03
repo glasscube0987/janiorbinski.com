@@ -25,6 +25,12 @@ h1 {
   color: var(--accent-color);
 }
 
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
 body {
   font-family: 'Raleway', sans-serif; /* Leipäteksti */
   margin: 0;
