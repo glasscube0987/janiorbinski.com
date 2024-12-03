@@ -82,13 +82,13 @@ header {
 
 @media (max-width: 768px) {
   .headline-container h1 {
-    font-size: 3.7rem;
+    font-size: 3.8rem;
   }
 }
 
 @media (max-width: 480px) {
   .headline-container h1 {
-    font-size: 3.4rem;
+    font-size: 3.6rem;
   }
 }
 
@@ -197,15 +197,17 @@ h2 {
   grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); /* Flexible grid with auto-fit */
   gap: 1rem;
   justify-items: center; /* Center items in their grid cell */
+  justify-content: left;
   padding: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   #gallery {
     padding: 0 1rem;
   }
   .gallery {
     grid-template-columns: repeat(2, 1fr); /* Two columns on mobile */
+    padding-right: 1rem;
   }
   .gallery-item {
     width: 170px; /* Fixed size for the items */
