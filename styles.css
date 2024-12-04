@@ -180,10 +180,6 @@ h2 {
   text-align: center;
 }
 
-#gallery, .gallery, .gallery-item {
-  outline: 1px solid red; /* Temporarily highlight for inspection */
-}
-
 
 #gallery {
   text-align: center;
