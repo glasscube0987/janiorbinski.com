@@ -411,6 +411,7 @@ audio {
   margin-top: 0;
   text-align: center;
   color: var(--accent-color);
+  padding: 0.5rem;
 }
 
 #skills h2 {
