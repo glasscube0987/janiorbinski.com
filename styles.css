@@ -19,10 +19,6 @@
   box-sizing: border-box;
 }
 
-html, body {
-  overflow-x: hidden;
-}
-
 h1 {
   font-family: 'Null', sans-serif;
   font-size: 4rem;
@@ -187,6 +183,7 @@ h2 {
 #gallery {
   text-align: center;
   margin-top: 4rem;
+  padding: 0 1rem; /* Add padding to prevent touching screen edges */
 }
 
 .gallery {
@@ -194,104 +191,43 @@ h2 {
   grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); /* Flexible grid with auto-fit */
   gap: 1rem;
   justify-items: center; /* Center items in their grid cell */
-  justify-content: left;
-  padding: 0;
 }
 
 @media (max-width: 480px) {
   #gallery {
-    padding: 0 1rem;
+    padding: 0 1rem; /* Ensure padding on smaller screens */
   }
-  .gallery {
-    grid-template-columns: repeat(2, 1fr); /* Two columns on mobile */
-    padding-right: 1rem;
-  }
-  .gallery-item {
-    width: 170px; /* Fixed size for the items */
-    height: 170px; /* Square images */
-  }
-}
 
-.gallery a {
-  display: inline-block;
+  .gallery {
+    gap: 0.5rem; /* Reduce gap on mobile */
+    grid-template-columns: repeat(2, 1fr); /* Two columns for smaller screens */
+  }
+
+  .gallery-item {
+    width: 100%; /* Take the size from the grid template */
+    max-width: 170px; /* Ensure the images don't exceed their intended size */
+    height: auto;
+  }
 }
 
 .gallery-item {
   position: relative;
   overflow: hidden;
   width: 170px; /* Fixed width */
-  height: 170px; /* Fixed height (square) */
+  height: 170px; /* Square dimensions */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.gallery-item img {
+.gallery img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.gallery-item .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(31, 40, 51, 0.5);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  color: var(--text-color);
-  font-size: 1rem;
-  font-weight: bold;
-  text-align: center;
-  padding: 0.5rem;
-  box-sizing: border-box;
-  transition: opacity 0.3s ease;
-  border-radius: 8px;
-}
-
-.gallery-item .overlay p {
-  margin: 0;
-  padding: 0;
-  line-height: 1.2;
-  font-family: 'Raleway', sans-serif;
-  font-weight: bold;
-  max-width: 95%;
-  word-wrap: break-word;
-}
-
-.gallery-item:hover img {
-  filter: brightness(0.7);
-  transform: scale(1.00);
-}
-
-.gallery-item:hover .overlay {
-  opacity: 1;
-}
-
-.gallery-group {
-  margin-bottom: 1rem;
-}
-
-.gallery-group h3 {
-  font-family: 'Raleway', sans-serif;
-  font-size: 2rem;
-  color: var(--text-color);
-  margin-bottom: 0.5rem;
-  text-align: left;
-}
-
-.gallery img {
-  border-radius: 8px;
+  border-radius: 8px; /* Keeps rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 
 
 #portfolio {
