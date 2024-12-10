@@ -271,6 +271,13 @@ h2 {
   opacity: 1;
 }
 
+.gallery-item:hover .overlay .image-credit {
+  font-size: 0.5rem;
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.5rem;
+}
+
 .gallery-group {
   margin-bottom: 1rem;
 }
@@ -345,14 +352,21 @@ audio {
 }
 
 .full-image {
-  height: 400px;
+  height: 500px;
   background-size: cover;
   background-position: 50% 60%;
   border-radius: 8px;
   background-image: 
     linear-gradient(to bottom, rgba(15, 164, 175, 0.5), rgba(150, 71, 52, 0.6)), /* Gradient overlay */
-    url('images/zoom_puro.jpg'); /* Background image */
+    url('images/iso_kaiutin_janna.jpg'); /* Background image */
   background-position: center; /* Centers the image */
+}
+
+
+.full-image-credits p {
+  font-size: 0.7rem;
+  padding: 0;
+  margin-top: 0.5rem;
 }
 
 .image-section {
@@ -412,6 +426,12 @@ audio {
   text-align: center;
   color: var(--accent-color);
   padding: 0.5rem;
+}
+
+@media (max-width: 480px) {
+  #skills h1 p {
+    font-size: 3.2rem;
+  }
 }
 
 #skills h2 {
