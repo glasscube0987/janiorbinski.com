@@ -39,12 +39,6 @@ body {
   background-color: var(--primary-bg); /* gray tint */
 }
 
-.subtitle-colored {
-  color: var(--accent-orange); /* Accent color for the subtitle */
-  font-size: 1.2rem; /* Slightly smaller than the main headline */
-  margin-top: 0.5rem; /* Space between headline and subtitle */
-}
-
 
 
 /* Header layout */
@@ -560,4 +554,19 @@ footer p {
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
+}
+
+
+.subtitle-colored {
+  color: var(--accent-orange); /* Accent color for the subtitle */
+  font-size: 1.2rem; /* Slightly smaller than the main headline */
+  margin-top: 0.5rem; /* Space between headline and subtitle */
+}
+
+@media (max-width: 480px) {
+  .subtitle-colored {
+    color: var(--accent-orange); /* Accent color for the subtitle */
+  font-size: 1.2rem; /* Slightly smaller than the main headline */
+  margin-top: 0.5rem; /* Space between headline and subtitle */
+  }
 }
