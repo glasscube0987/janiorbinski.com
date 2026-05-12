@@ -4,6 +4,7 @@
   --text-color: #C5C6C7;
   --accent-color: #66FCF1;
   --accent-muted: #4ac3bd;
+  --accent-orange: #d65d3e;
 }
 
 /* Fontit */
@@ -36,6 +37,12 @@ body {
   padding: 0;
   color: var(--text-color);
   background-color: var(--primary-bg); /* gray tint */
+}
+
+.subtitle-colored {
+  color: var(--accent-orange); /* Accent color for the subtitle */
+  font-size: 1.2rem; /* Slightly smaller than the main headline */
+  margin-top: 0.5rem; /* Space between headline and subtitle */
 }
 
 
@@ -541,4 +548,16 @@ footer p {
   font-size: 0.9rem;
   margin-bottom: 1rem;
   text-align: center;
+}
+
+/* CV page specific styles */
+.download-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--accent-color);
+  color: var(--primary-bg);
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
 }
