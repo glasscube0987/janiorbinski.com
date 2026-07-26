@@ -317,7 +317,7 @@ h2 {
   }
 
   .gallery-item .overlay {
-    position: static;
+    position: relative;
     opacity: 1;
     background: none;
     height: auto;
@@ -329,14 +329,22 @@ h2 {
     display: none;
   }
 
+  /* Credit sits on top of the image, bottom-right corner:
+     the overlay starts right at the image's bottom edge, so
+     bottom: 100% anchors the credit back onto the image */
   .gallery-item .overlay .image-credit,
   .gallery-item:hover .overlay .image-credit {
-    position: static;
-    font-size: 0.55rem;
+    position: absolute;
+    bottom: calc(100% + 0.4rem);
+    right: 0.5rem;
+    left: auto;
+    margin: 0;
+    font-size: 0.5rem;
     font-weight: normal;
-    color: var(--text-color);
-    opacity: 0.7;
-    margin-top: 0.3rem;
+    text-align: right;
+    color: #fff;
+    opacity: 0.8;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
   }
 
   .gallery-item .overlay .overlay-title {
