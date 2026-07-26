@@ -296,6 +296,57 @@ h2 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Touch devices and small screens: no hover available, so show
+   the title and role as a caption below each image instead */
+@media (hover: none), (max-width: 768px) {
+  .gallery a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: var(--text-color);
+  }
+
+  .gallery-item {
+    height: auto;
+    align-items: flex-start;
+  }
+
+  .gallery-item img {
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .gallery-item .overlay {
+    position: static;
+    opacity: 1;
+    background: none;
+    height: auto;
+    padding: 0.5rem 0.2rem 0;
+    border-radius: 0;
+  }
+
+  .gallery-item .overlay .overlay-separator,
+  .gallery-item .overlay .image-credit {
+    display: none;
+  }
+
+  .gallery-item .overlay .overlay-title {
+    font-size: 0.8rem;
+  }
+
+  .gallery-item .overlay .overlay-role {
+    font-size: 0.72rem;
+    font-weight: normal;
+    color: var(--accent-muted);
+    margin-top: 0.25rem;
+  }
+
+  .gallery-item:hover img {
+    filter: none;
+    transform: none;
+  }
+}
+
 
 
 #portfolio {

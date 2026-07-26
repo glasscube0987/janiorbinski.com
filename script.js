@@ -1,3 +1,17 @@
+// Tag overlay paragraphs so mobile captions can style titles and roles separately
+document.querySelectorAll('.gallery-item .overlay').forEach((overlay) => {
+  let reachedSeparator = false;
+  overlay.querySelectorAll('p').forEach((p) => {
+    if (p.classList.contains('image-credit')) return;
+    if (p.textContent.trim() === '.') {
+      p.classList.add('overlay-separator');
+      reachedSeparator = true;
+    } else {
+      p.classList.add(reachedSeparator ? 'overlay-role' : 'overlay-title');
+    }
+  });
+});
+
 const backToTopButton = document.getElementById('back-to-top');
 
 window.addEventListener('scroll', () => {
