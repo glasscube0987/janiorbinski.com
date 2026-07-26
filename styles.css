@@ -325,9 +325,18 @@ h2 {
     border-radius: 0;
   }
 
-  .gallery-item .overlay .overlay-separator,
-  .gallery-item .overlay .image-credit {
+  .gallery-item .overlay .overlay-separator {
     display: none;
+  }
+
+  .gallery-item .overlay .image-credit,
+  .gallery-item:hover .overlay .image-credit {
+    position: static;
+    font-size: 0.55rem;
+    font-weight: normal;
+    color: var(--text-color);
+    opacity: 0.7;
+    margin-top: 0.3rem;
   }
 
   .gallery-item .overlay .overlay-title {
