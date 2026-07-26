@@ -41,14 +41,15 @@ body {
 
 
 
-/* Header layout */
+/* Header layout: the headline sits low, on the calm water at the
+   horizon line, and the image fades into the dark nav below */
 header {
+  position: relative;
   display: flex;
-  align-items: center; /* Vertically align logo and headline container */
-  /*position: relative; /* Needed to position the headline container absolutely */
-  padding: 10rem 4rem;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 11rem 2rem 2.5rem;
   text-align: center; /* Ensures elements remain central on smaller screens */
-  /*background-color: #898121; */
   background-image: url('images/iltarusko.jpg'), linear-gradient(rgba(150, 71, 52, 0.9), rgba(15, 164, 175, 0.9)); /* Add a gradient */
   background-size: cover;
   background-blend-mode: overlay; /* Other options: multiply, screen, darken, lighten */
@@ -56,53 +57,47 @@ header {
   color: #fff;
 }
 
+/* Dark fade at the bottom of the image, anchoring the text
+   and blending the header into the nav bar */
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(13, 27, 43, 0) 35%, rgba(13, 27, 43, 0.75) 100%);
+  pointer-events: none;
+}
+
 /* Headline container */
 .headline-container {
-  position: absolute; /* Remove it from the normal document flow */
+  position: relative;
   z-index: 2;
-  left: 50%; /* Start at the horizontal center */
-  transform: translateX(-50%); /* Correct for the width of the container */
   text-align: center; /* Center text inside the container */
 }
 
 .headline-container h1 {
   font-family: 'Null', sans-serif;
-  font-size: 4.5rem;
+  font-size: clamp(2.3rem, 9vw, 4.5rem); /* Stays on one line on phones */
   margin: 0;
   font-weight: 300;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
   color: #fff;
-}
-
-@media (max-width: 768px) {
-  .headline-container h1 {
-    font-size: 3.8rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .headline-container h1 {
-    font-size: 3.6rem;
-  }
 }
 
 .headline-container h2 {
   font-family: 'Raleway', sans-serif;
-  font-size: 1.4rem;
-  margin-top: 1rem;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-  color: #e9e7e7; /* A lighter color for distinction */
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  color: #fff;
 }
 
 @media (max-width: 768px) {
-  .headline-container h2 {
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .headline-container h2 {
-    font-size: 1.1rem;
+  header {
+    padding: 8rem 1.5rem 2rem;
   }
 }
 
@@ -676,15 +671,10 @@ footer p {
 
 
 .subtitle-colored {
-  color: var(--accent-orange); /* Accent color for the subtitle */
-  font-size: 1.2rem; /* Slightly smaller than the main headline */
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9rem; /* Slightly smaller than the main headline */
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
   margin-top: 0.5rem; /* Space between headline and subtitle */
-}
-
-@media (max-width: 480px) {
-  .subtitle-colored {
-    color: var(--accent-orange); /* Accent color for the subtitle */
-  font-size: 1.2rem; /* Slightly smaller than the main headline */
-  margin-top: 0.5rem; /* Space between headline and subtitle */
-  }
 }
