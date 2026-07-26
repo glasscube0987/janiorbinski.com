@@ -106,13 +106,27 @@ header {
   }
 }
 
+/* Keep anchored sections from scrolling under the sticky nav */
+section {
+  scroll-margin-top: 5.5rem;
+}
+
+/* Nav stays pinned to the top while scrolling */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--primary-bg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
 nav ul {
   display: flex;
   justify-content: center;
   list-style: none;
   background-color: var(--primary-bg);
   padding: 0.7rem 0rem;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 nav ul li {
@@ -131,14 +145,21 @@ nav ul li a:hover {
   color: var(--accent-color);
 }
 
+/* Compact horizontal nav on small screens: wraps to a second
+   row if needed instead of stacking into a tall column */
 @media (max-width: 768px) {
   nav ul {
-      flex-direction: column;
-      align-items: center;
+      flex-wrap: wrap;
+      row-gap: 0.3rem;
+      padding: 0.5rem;
   }
 
   nav ul li {
-      margin: 0.5rem 0;
+      margin: 0 0.6rem;
+  }
+
+  nav ul li a {
+      font-size: 0.95rem;
   }
 }
 
