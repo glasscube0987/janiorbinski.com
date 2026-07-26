@@ -368,34 +368,48 @@ h2 {
 
 #portfolio {
   margin-top: 7rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
 }
 
-/* General styling for the Music portfolio section */
-#audio-item {
-  margin-bottom: 1.5rem;
+#portfolio h1 {
+  grid-column: 1 / -1;
+}
+
+/* Each track as a card on the darker page color */
+.audio-item {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-bg);
+  border-radius: 10px;
+  padding: 1rem 1.2rem 1.2rem;
+  text-align: left;
 }
 
 /* Styling for each audio item's header */
 .audio-item h3 {
   font-family: 'Raleway', sans-serif;
   font-size: 1.1rem;
-  margin: 0.5rem 0;
-  color: var(--text-color);
+  margin: 0 0 0.4rem;
+  color: var(--accent-muted);
 }
 
 /* Customize audio players */
 audio {
-  width: 90%; /* Full width for responsiveness */
-  height: 25px; /* Reduce height to make it compact */
-  outline: none; /* Optional: Remove default focus styles */
+  width: 100%;
+  height: 32px;
+  outline: none;
+  color-scheme: dark; /* Native controls render dark to match the theme */
+  margin-top: auto; /* Players align at the card bottom across a row */
 }
 
 /* Styling for audio item descriptions */
 .audio-description {
   font-family: 'Raleway', sans-serif;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #b9b9b9; /* Subtle gray to keep focus on titles and audio players */
-  margin: 0rem 0; /* Spacing above and below */
+  margin: 0 0 0.3rem;
   line-height: 1.5; /* Improve readability */
 }
 
@@ -403,21 +417,23 @@ audio {
   display: none; /* Hidden by default */
 }
 
+/* "Read more" as a quiet text link instead of a button */
 .expand-btn {
-  background-color: var(--accent-color);
-  color: var(--primary-bg);
+  background: none;
   border: none;
-  padding: 0.2rem 0.4rem;
-  font-size: 0.9rem;
+  padding: 0;
+  align-self: flex-start;
+  margin: 0 0 1rem;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.85rem;
+  color: var(--accent-color);
   cursor: pointer;
-  border-radius: 5px;
-  margin: 0rem 0rem;
-  transition: background-color 0.3s ease;
-
+  text-decoration: underline;
+  transition: color 0.3s ease;
 }
 
 .expand-btn:hover {
-  background-color: var(--accent-muted);
+  color: var(--accent-muted);
 }
 
 .full-image {
