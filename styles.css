@@ -157,11 +157,22 @@ nav ul li a:hover {
   }
 
   nav ul li {
-      margin: 0 0.6rem;
+      margin: 0 0.45rem;
   }
 
   nav ul li a {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
+  }
+}
+
+/* Narrowest phones: tighten further so all links stay on one row */
+@media (max-width: 380px) {
+  nav ul li {
+      margin: 0 0.35rem;
+  }
+
+  nav ul li a {
+      font-size: 0.72rem;
   }
 }
 
