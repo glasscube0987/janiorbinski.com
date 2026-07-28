@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CLIENT_NAME — short description of the business for search engines.">
+  <title>CLIENT_NAME</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="nav__brand" href="#home">CLIENT_NAME</a>
+      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+      <ul class="nav__menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container">
+        <h1>Headline that says what the client does</h1>
+        <p class="hero__subtitle">One supporting sentence about who they help and why it matters.</p>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About</h2>
+        <p>Two or three sentences about the client: who they are, how long they have been doing this, and what makes them different.</p>
+      </div>
+    </section>
+
+    <section id="services" class="section section--alt">
+      <div class="container">
+        <h2>Services</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Service one</h3>
+            <p>Short description of the first service.</p>
+          </article>
+          <article class="card">
+            <h3>Service two</h3>
+            <p>Short description of the second service.</p>
+          </article>
+          <article class="card">
+            <h3>Service three</h3>
+            <p>Short description of the third service.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:hello@example.com">hello@example.com</a></p>
+        <p>Phone: <a href="tel:+10000000000">+1 000 000 0000</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> CLIENT_NAME. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
