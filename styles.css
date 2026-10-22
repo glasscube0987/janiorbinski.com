@@ -811,8 +811,16 @@ footer p {
   margin: 0 0 1.5rem;
 }
 
+/* The work title is set in Raleway rather than the Null display
+   font: Null places its diacritics far above the letterforms, and
+   this title carries seven of them. Scoped to .work-text, which
+   only the work page uses, so Null stays in place site-wide. */
 .work-text h1 {
-  font-size: clamp(2rem, 8vw, 3rem);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.7rem, 6.6vw, 2.4rem);
+  line-height: 1.25;
+  letter-spacing: 0.01em;
   margin-bottom: 0.6rem;
 }
 
