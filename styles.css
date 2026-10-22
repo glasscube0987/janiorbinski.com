@@ -777,3 +777,66 @@ footer p {
   color: var(--accent-color);
   border: 1px solid var(--accent-color);
 }
+
+/* Work text page (teos.html): long-form reading on a phone,
+   often in a dimly lit room, so text runs large and airy */
+.work-text {
+  max-width: 34rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.work-event {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-muted);
+  text-align: center;
+  margin: 0 0 1.5rem;
+}
+
+.work-text h1 {
+  font-size: clamp(2rem, 8vw, 3rem);
+  margin-bottom: 0.6rem;
+}
+
+.work-subtitle {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-align: center;
+  opacity: 0.75;
+  margin: 0 0 3rem;
+}
+
+.work-body p {
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.85;
+  margin: 0 0 1.5rem;
+}
+
+.work-credits {
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(197, 198, 199, 0.2);
+}
+
+.work-credits p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  margin: 0 0 0.4rem;
+}
+
+.work-back {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.work-back a {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: var(--accent-muted);
+  text-decoration: none;
+}
