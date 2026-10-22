@@ -255,6 +255,13 @@ h2 {
   display: inline-block;
 }
 
+/* The link has to fill the tile for the image's height: 100% to
+   resolve; otherwise non-square images sit letterboxed in the tile */
+.gallery-item > a {
+  width: 100%;
+  height: 100%;
+}
+
 .gallery-item {
   position: relative;
   overflow: hidden;
@@ -1013,4 +1020,158 @@ body.has-lang-toggle .lang-toggle {
   background-color: var(--accent-muted);
   border-color: var(--accent-muted);
   color: var(--primary-bg);
+}
+
+/* "Now" section at the top of the front page: one featured work
+   plus a short list of upcoming ones */
+#now {
+  margin: 0 0 4.5rem;
+}
+
+#now > h1 {
+  margin-bottom: 1.6rem;
+}
+
+.now-feature {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background-color: var(--primary-bg);
+  border-radius: 14px;
+  border-left: 4px solid var(--accent-color);
+  padding: 1.8rem 1.6rem 1.7rem;
+  text-align: left;
+  transition: transform 0.2s ease;
+}
+
+.now-feature:hover {
+  transform: translateY(-2px);
+}
+
+.now-feature .now-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin: 0 0 0.9rem;
+}
+
+/* Overrides the uppercase category-label style that h2 carries elsewhere */
+#now .now-feature h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(1.45rem, 5.4vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  line-height: 1.25;
+  color: #fff;
+  text-align: left;
+  margin: 0 0 0.5rem;
+}
+
+.now-feature .now-meta {
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+  opacity: 0.8;
+  margin: 0 0 1.1rem;
+}
+
+.now-feature .now-desc {
+  font-size: 1rem;
+  margin: 0 0 1.4rem;
+}
+
+.now-cta {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+}
+
+.upcoming {
+  margin-top: 2.2rem;
+  text-align: left;
+}
+
+#now .upcoming h3 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-muted);
+  text-align: left;
+  margin: 0 0 0.6rem;
+}
+
+.upcoming ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.upcoming li {
+  display: grid;
+  grid-template-columns: 5.6rem 1fr;
+  gap: 0.9rem;
+  padding: 0.95rem 0;
+  border-top: 1px solid rgba(197, 198, 199, 0.15);
+}
+
+.upcoming li:last-child {
+  border-bottom: 1px solid rgba(197, 198, 199, 0.15);
+}
+
+.up-date {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--accent-muted);
+  padding-top: 0.15rem;
+}
+
+.up-title {
+  font-weight: 600;
+  color: #e6e6e6;
+}
+
+.up-title a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(102, 252, 241, 0.5);
+  text-underline-offset: 3px;
+}
+
+.up-title a:hover {
+  color: var(--accent-color);
+}
+
+.up-desc {
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.55;
+  margin-top: 0.3rem;
+}
+
+.up-venue {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-top: 0.25rem;
+}
+
+/* Award label on a highlighted gallery image */
+.award-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--primary-bg);
+  background-color: var(--accent-color);
+  border-radius: 4px;
+  padding: 0.2rem 0.45rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
 }
