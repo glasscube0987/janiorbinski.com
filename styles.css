@@ -244,63 +244,40 @@ h2 {
      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Flexible sizing */
      gap: 0.5rem; /* Smaller gap for tighter spacing */
   }
-  .gallery-item {
-     width: 100%; /* Let the container control the size */
-     height: auto; /* Maintain aspect ratio */
-  }
 }
 
-
+/* Each tile is a square image with the work's title and role as a
+   caption underneath, on every device */
 .gallery a {
-  display: inline-block;
-}
-
-/* The link has to fill the tile for the image's height: 100% to
-   resolve; otherwise non-square images sit letterboxed in the tile */
-.gallery-item > a {
+  display: block;
   width: 100%;
-  height: 100%;
+  text-decoration: none;
+  color: var(--text-color);
 }
 
 .gallery-item {
   position: relative;
   overflow: hidden;
-  width: 170px; /* Fixed width */
-  height: 170px; /* Fixed height (square) */
+  width: 170px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   padding: 5px;
 }
 
 .gallery-item img {
   display: block;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .gallery-item .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(31, 40, 51, 0.5);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
+  position: relative;
   color: var(--text-color);
-  font-size: 1rem;
-  font-weight: bold;
   text-align: center;
-  padding: 0.5rem;
-  box-sizing: border-box;
-  transition: opacity 0.3s ease;
-  border-radius: 8px;
+  padding: 0.5rem 0.2rem 0;
 }
 
 .gallery-item .overlay p {
@@ -309,24 +286,66 @@ h2 {
   line-height: 1.2;
   font-family: 'Raleway', sans-serif;
   font-weight: bold;
-  max-width: 95%;
   word-wrap: break-word;
 }
 
-.gallery-item:hover img {
-  filter: brightness(0.7);
-  transform: scale(1.00);
+.gallery-item .overlay .overlay-separator {
+  display: none;
 }
 
-.gallery-item:hover .overlay {
-  opacity: 1;
+.gallery-item .overlay .overlay-title {
+  font-size: 0.8rem;
+  transition: color 0.2s ease;
 }
 
-.gallery-item:hover .overlay .image-credit {
-  font-size: 0.5rem;
+.gallery-item .overlay .overlay-role {
+  font-size: 0.72rem;
+  font-weight: normal;
+  color: var(--accent-muted);
+  margin-top: 0.25rem;
+}
+
+/* Credit sits on top of the image, bottom-right corner: the caption
+   starts right at the image's bottom edge, so bottom: 100% anchors
+   the credit back onto the image */
+.gallery-item .overlay .image-credit {
   position: absolute;
-  bottom: 0.5rem;
-  left: 0.5rem;
+  bottom: calc(100% + 0.4rem);
+  right: 0.5rem;
+  margin: 0;
+  font-size: 0.5rem;
+  font-weight: normal;
+  text-align: right;
+  color: #fff;
+  opacity: 0.8;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+/* With a mouse, a slight lift and a coloured title mark the tile */
+@media (hover: hover) {
+  .gallery-item:hover img {
+    filter: brightness(1.08);
+    transform: translateY(-2px);
+  }
+
+  .gallery-item:hover .overlay .overlay-title {
+    color: var(--accent-color);
+  }
+}
+
+/* Phones: tiles follow the column width instead of the fixed 170px */
+@media (max-width: 480px) {
+  .gallery-item {
+    width: 100%;
+  }
+
+  /* A group with a single work keeps it tile-sized and centred
+     instead of stretching it across the screen */
+  .gallery-item:only-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc((100% - 0.5rem) / 2);
+  }
 }
 
 .gallery-group {
@@ -349,75 +368,6 @@ h2 {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-/* Touch devices and small screens: no hover available, so show
-   the title and role as a caption below each image instead */
-@media (hover: none), (max-width: 768px) {
-  .gallery a {
-    display: block;
-    width: 100%;
-    text-decoration: none;
-    color: var(--text-color);
-  }
-
-  .gallery-item {
-    height: auto;
-    align-items: flex-start;
-  }
-
-  .gallery-item img {
-    height: auto;
-    aspect-ratio: 1 / 1;
-  }
-
-  .gallery-item .overlay {
-    position: relative;
-    opacity: 1;
-    background: none;
-    height: auto;
-    padding: 0.5rem 0.2rem 0;
-    border-radius: 0;
-  }
-
-  .gallery-item .overlay .overlay-separator {
-    display: none;
-  }
-
-  /* Credit sits on top of the image, bottom-right corner:
-     the overlay starts right at the image's bottom edge, so
-     bottom: 100% anchors the credit back onto the image */
-  .gallery-item .overlay .image-credit,
-  .gallery-item:hover .overlay .image-credit {
-    position: absolute;
-    bottom: calc(100% + 0.4rem);
-    right: 0.5rem;
-    left: auto;
-    margin: 0;
-    font-size: 0.5rem;
-    font-weight: normal;
-    text-align: right;
-    color: #fff;
-    opacity: 0.8;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
-  }
-
-  .gallery-item .overlay .overlay-title {
-    font-size: 0.8rem;
-  }
-
-  .gallery-item .overlay .overlay-role {
-    font-size: 0.72rem;
-    font-weight: normal;
-    color: var(--accent-muted);
-    margin-top: 0.25rem;
-  }
-
-  .gallery-item:hover img {
-    filter: none;
-    transform: none;
-  }
-}
-
 
 
 #portfolio {
@@ -1161,42 +1111,23 @@ body.has-lang-toggle .lang-toggle {
   margin-top: 0.25rem;
 }
 
-/* Phones: tiles follow the column width. The 480px block near the top
-   says the same, but the base .gallery-item rule comes after it and its
-   fixed 170px wins, which made tiles overlap on narrow phones. */
-@media (max-width: 480px) {
-  .gallery-item {
-    width: 100%;
-  }
-
-  /* A group with a single work keeps it tile-sized and centred
-     instead of stretching it across the screen */
-  .gallery-item:only-child {
-    grid-column: 1 / -1;
-    justify-self: center;
-    width: calc((100% - 0.5rem) / 2);
-  }
-}
-
 /* Highlights stay on one row on desktop, however many there are */
-@media (hover: hover) and (min-width: 769px) {
+@media (min-width: 769px) {
   .highlights .gallery {
     grid-template-columns: none;
     grid-auto-flow: column;
-    grid-auto-columns: 1fr;
+    grid-auto-columns: minmax(0, 1fr);
   }
 
   .highlights .gallery-item {
     width: 100%;
-    height: auto;
-    aspect-ratio: 1 / 1;
   }
 }
 
 /* On phones the two-column grid leaves an odd last tile alone. Laying
    the tiles on four half-columns, two each, lets that tile sit in the
    middle two at exactly the same width as the rest. */
-@media (hover: none), (max-width: 768px) {
+@media (max-width: 768px) {
   .highlights .gallery {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
