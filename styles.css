@@ -735,27 +735,27 @@ footer p {
   border: 1px solid var(--accent-color);
 }
 
-/* Front page header on phones: the same size as the compact header
+/* Front page and CV header on phones: the same size as the compact header
    below. The image fills the header's height here, so the horizon
    sits at a fixed 65% of the height; at 182px it falls between the
    name and the lines under it. The subtitle fits into the space the
    compact header leaves below its last line, which is why the heading
    margins are zeroed and the bottom padding is a little shorter. */
 @media (max-width: 480px) {
-  .header-home {
+  .header-main {
     padding: 5rem 1.5rem 1.6rem;
   }
 
-  .header-home .headline-container h1 {
+  .header-main .headline-container h1 {
     font-size: clamp(1.8rem, 7vw, 2.8rem);
   }
 
-  .header-home .headline-container h2 {
+  .header-main .headline-container h2 {
     font-size: 0.8rem;
     margin: 0.5rem 0 0;
   }
 
-  .header-home .subtitle-colored {
+  .header-main .subtitle-colored {
     font-size: 0.64rem;
     font-weight: 400;
     letter-spacing: 0.1em;
