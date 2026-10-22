@@ -1161,6 +1161,55 @@ body.has-lang-toggle .lang-toggle {
   margin-top: 0.25rem;
 }
 
+/* Phones: tiles follow the column width. The 480px block near the top
+   says the same, but the base .gallery-item rule comes after it and its
+   fixed 170px wins, which made tiles overlap on narrow phones. */
+@media (max-width: 480px) {
+  .gallery-item {
+    width: 100%;
+  }
+
+  /* A group with a single work keeps it tile-sized and centred
+     instead of stretching it across the screen */
+  .gallery-item:only-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc((100% - 0.5rem) / 2);
+  }
+}
+
+/* Highlights stay on one row on desktop, however many there are */
+@media (hover: hover) and (min-width: 769px) {
+  .highlights .gallery {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+
+  .highlights .gallery-item {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+/* On phones the two-column grid leaves an odd last tile alone. Laying
+   the tiles on four half-columns, two each, lets that tile sit in the
+   middle two at exactly the same width as the rest. */
+@media (hover: none), (max-width: 768px) {
+  .highlights .gallery {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .highlights .gallery-item {
+    grid-column: span 2;
+  }
+
+  .highlights .gallery-item:last-child:nth-child(odd) {
+    grid-column: 2 / span 2;
+  }
+}
+
 /* Award label on a highlighted gallery image */
 .award-badge {
   position: absolute;
