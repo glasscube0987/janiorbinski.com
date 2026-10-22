@@ -1,4 +1,4 @@
-// Tag overlay paragraphs so mobile captions can style titles and roles separately
+// Tag overlay paragraphs so the gallery captions can style titles and roles separately
 document.querySelectorAll('.gallery-item .overlay').forEach((overlay) => {
   let reachedSeparator = false;
   overlay.querySelectorAll('p').forEach((p) => {
