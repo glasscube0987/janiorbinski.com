@@ -777,3 +777,192 @@ footer p {
   color: var(--accent-color);
   border: 1px solid var(--accent-color);
 }
+
+/* Shorter header for subpages reached directly (e.g. via QR code),
+   so the content starts near the top of the screen */
+.header-compact {
+  padding: 5rem 1.5rem 1.8rem;
+}
+
+.header-compact .headline-container h1 {
+  font-size: clamp(1.8rem, 7vw, 2.8rem);
+}
+
+.header-compact .headline-container h2 {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+/* Work text page: long-form reading on a phone, often in a dimly
+   lit room, so text runs large and airy */
+.work-text {
+  max-width: 34rem;
+  margin: 0 auto;
+  padding: 1rem 0 1rem;
+}
+
+.work-event {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-muted);
+  text-align: center;
+  margin: 0 0 1.5rem;
+}
+
+.work-text h1 {
+  font-size: clamp(2rem, 8vw, 3rem);
+  margin-bottom: 0.6rem;
+}
+
+.work-subtitle {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-align: center;
+  opacity: 0.75;
+  margin: 0 0 3rem;
+}
+
+.work-body p {
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.85;
+  margin: 0 0 1.5rem;
+}
+
+.work-credits {
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(197, 198, 199, 0.2);
+}
+
+.work-credits p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  margin: 0 0 0.4rem;
+}
+
+.work-back {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.work-back a {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: var(--accent-muted);
+  text-decoration: none;
+}
+
+/* Guestbook: visitors leave a private message for the artist */
+.guestbook {
+  margin-top: 3.5rem;
+  padding: 1.8rem 1.5rem 1.5rem;
+  background-color: var(--primary-bg);
+  border-radius: 12px;
+}
+
+.guestbook h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-muted);
+  text-align: left;
+  margin: 0 0 0.3rem;
+}
+
+.guestbook-intro {
+  font-size: 0.9rem;
+  font-style: italic;
+  opacity: 0.8;
+  margin: 0 0 1.5rem;
+}
+
+.guestbook label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-color);
+  margin-bottom: 0.4rem;
+}
+
+.guestbook .optional {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  opacity: 0.6;
+}
+
+.guestbook textarea,
+.guestbook input[type="text"] {
+  width: 100%;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem; /* 16px keeps iOS from zooming in on focus */
+  color: var(--text-color);
+  background-color: var(--secondary-bg);
+  border: 1px solid rgba(197, 198, 199, 0.25);
+  border-radius: 8px;
+  padding: 0.7rem 0.8rem;
+  margin-bottom: 1.2rem;
+  resize: vertical;
+}
+
+.guestbook textarea:focus,
+.guestbook input[type="text"]:focus {
+  outline: none;
+  border-color: var(--accent-muted);
+}
+
+.guestbook button {
+  border: none;
+  cursor: pointer;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  margin-top: 0;
+}
+
+.guestbook button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* Honeypot stays in the DOM for bots but out of sight and out of
+   the tab order for people */
+.gb-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.gb-status {
+  font-size: 0.9rem;
+  margin: 0.9rem 0 0;
+  min-height: 1.2em;
+}
+
+.gb-status-ok {
+  color: var(--accent-color);
+}
+
+.gb-status-error {
+  color: var(--accent-orange);
+}
+
+.guestbook-note {
+  font-size: 0.75rem;
+  opacity: 0.6;
+  margin: 1.2rem 0 0;
+  line-height: 1.5;
+}
+
+/* Target frame for the guestbook post; never meant to be seen */
+.gb-sink {
+  display: none;
+}
