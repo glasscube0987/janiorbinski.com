@@ -974,3 +974,43 @@ footer p {
 .gb-sink {
   display: none;
 }
+
+/* Finnish and English versions of the work text live in the same
+   page; only one is shown at a time. Without scripting the body
+   keeps its Finnish setting and the switch stays hidden. */
+body[data-lang="fi"] [data-l="en"],
+body[data-lang="en"] [data-l="fi"] {
+  display: none;
+}
+
+.lang-toggle {
+  display: none;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+
+body.has-lang-toggle .lang-toggle {
+  display: flex;
+}
+
+.lang-btn {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-color);
+  background: none;
+  border: 1px solid rgba(197, 198, 199, 0.3);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.lang-btn.is-active {
+  background-color: var(--accent-muted);
+  border-color: var(--accent-muted);
+  color: var(--primary-bg);
+}
