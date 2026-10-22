@@ -73,13 +73,15 @@
                 <h2>Jätä jälkesi</h2>
                 <p class="guestbook-intro">Viesti äänimerkin jälkeen.</p>
 
-                <form id="guestbook-form" action="FORM_ACTION_PLACEHOLDER" method="POST">
+                <form id="guestbook-form" method="POST"
+                    action="https://docs.google.com/forms/d/e/1FAIpQLSfXsaK8pifKLEOOeiF9lc-_p-12vP4_Y6T3MPyCFo5Q-Or_0g/formResponse"
+                    target="gb-sink">
                     <label for="gb-message">Viesti</label>
-                    <textarea id="gb-message" name="message" rows="5" required
+                    <textarea id="gb-message" name="entry.MESSAGE_ID" rows="5" required
                         placeholder="Kirjoita tähän…"></textarea>
 
                     <label for="gb-name">Nimi <span class="optional">(vapaaehtoinen)</span></label>
-                    <input type="text" id="gb-name" name="name" autocomplete="name">
+                    <input type="text" id="gb-name" name="entry.NAME_ID" autocomplete="name">
 
                     <!-- Honeypot: hidden from people, tempting to bots -->
                     <div class="gb-hp" aria-hidden="true">
@@ -87,13 +89,16 @@
                         <input type="text" id="gb-company" name="_gotcha" tabindex="-1" autocomplete="off">
                     </div>
 
-                    <input type="hidden" name="_subject" value="Äänimerkin jälkeen – uusi jälki">
-
                     <button type="submit" class="download-link">Lähetä</button>
                     <p class="gb-status" id="gb-status" role="status" aria-live="polite"></p>
                 </form>
 
                 <p class="guestbook-note">Viestit tulevat vain teoksen tekijälle, eivätkä ne näy tällä sivulla.</p>
+
+                <!-- The form posts into this hidden frame, so the visitor
+                     stays on the page instead of landing on Google's
+                     confirmation screen -->
+                <iframe name="gb-sink" id="gb-sink" class="gb-sink" title="" tabindex="-1" aria-hidden="true"></iframe>
             </section>
 
             <div class="work-credits">
@@ -113,39 +118,51 @@
         (function () {
             var form = document.getElementById('guestbook-form');
             var status = document.getElementById('gb-status');
+            var sink = document.getElementById('gb-sink');
+            var button = form && form.querySelector('button[type="submit"]');
             if (!form) return;
 
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
+            var sent = false;
 
-                // Fail safe: if no endpoint has been configured yet, say so
-                // rather than posting the form into a 404
-                if (form.action.indexOf('FORM_ACTION_PLACEHOLDER') !== -1) {
+            function done() {
+                form.reset();
+                status.textContent = 'Kiitos – jälkesi jäi talteen.';
+                status.className = 'gb-status gb-status-ok';
+                button.style.display = 'none';
+            }
+
+            // The hidden frame finishes loading once Google has taken the
+            // response; its contents are cross-origin and unreadable, so the
+            // load event itself is the signal
+            sink.addEventListener('load', function () {
+                if (sent) done();
+            });
+
+            form.addEventListener('submit', function (e) {
+                // Fail safe: don't post until the field ids are filled in
+                if (form.innerHTML.indexOf('entry.MESSAGE_ID') !== -1) {
+                    e.preventDefault();
                     status.textContent = 'Vieraskirja avataan hetken kuluttua.';
                     status.className = 'gb-status gb-status-error';
                     return;
                 }
 
-                var button = form.querySelector('button[type="submit"]');
+                // Quietly swallow anything that filled the honeypot
+                if (form.querySelector('[name="_gotcha"]').value !== '') {
+                    e.preventDefault();
+                    done();
+                    return;
+                }
+
+                sent = true;
                 button.disabled = true;
                 status.textContent = 'Lähetetään…';
                 status.className = 'gb-status';
 
-                fetch(form.action, {
-                    method: 'POST',
-                    body: new FormData(form),
-                    headers: { 'Accept': 'application/json' }
-                }).then(function (response) {
-                    if (!response.ok) throw new Error('send failed');
-                    form.reset();
-                    status.textContent = 'Kiitos – jälkesi jäi talteen.';
-                    status.className = 'gb-status gb-status-ok';
-                    button.style.display = 'none';
-                }).catch(function () {
-                    button.disabled = false;
-                    status.textContent = 'Lähetys ei onnistunut. Yritä hetken kuluttua uudelleen.';
-                    status.className = 'gb-status gb-status-error';
-                });
+                // Let the browser post into the hidden frame. If the frame
+                // never reports back, show the thank-you anyway rather than
+                // leave the visitor waiting.
+                setTimeout(function () { if (sent) done(); }, 4000);
             });
         })();
     </script>

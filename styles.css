@@ -961,3 +961,8 @@ footer p {
   margin: 1.2rem 0 0;
   line-height: 1.5;
 }
+
+/* Target frame for the guestbook post; never meant to be seen */
+.gb-sink {
+  display: none;
+}
