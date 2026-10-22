@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Äänimerkin jälkeen – jälkikaikuja | Jani Orbinski</title>
-    <meta name="description" content="Äänimerkin jälkeen – jälkikaikuja. Monikanavainen ääniteos Mikkelin Museoiden yössä 23.10.2026, Kivisakasti. Jani Orbinski, 2026.">
+    <meta name="description" content="Äänimerkin jälkeen – jälkikaikuja. Monikanavainen ääniteos Mikkelin Museoiden yössä 23.10.2026, Kivisakasti. Jani Orbinski, 2026. Work text in Finnish and English.">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
     <meta name="twitter:image" content="https://www.janiorbinski.com/images/og-share.jpg">
 </head>
 
-<body>
+<body data-lang="fi">
     <header class="header-compact">
         <div class="headline-container">
             <h1>JANI ORBINSKI</h1>
@@ -44,12 +44,21 @@
 
     <main>
         <article class="work-text">
-            <p class="work-event">Mikkelin Museoiden yö · 23.10.2026 · Kivisakasti</p>
+            <div class="lang-toggle" role="group" aria-label="Kieli / Language">
+                <button type="button" class="lang-btn is-active" data-set-lang="fi" lang="fi">Suomeksi</button>
+                <button type="button" class="lang-btn" data-set-lang="en" lang="en">In English</button>
+            </div>
 
-            <h1>Äänimerkin jälkeen<br>– jälkikaikuja</h1>
-            <p class="work-subtitle">Jani Orbinski, 2026 · Monikanavainen ääniteos, 5 kaiutinta</p>
+            <p class="work-event" data-l="fi">Mikkelin Museoiden yö · 23.10.2026 · Kivisakasti</p>
+            <p class="work-event" data-l="en" lang="en">Museums' Night, Mikkeli · 23 October 2026 · The Stone Sacristy</p>
 
-            <div class="work-body">
+            <h1 data-l="fi">Äänimerkin jälkeen<br>– jälkikaikuja</h1>
+            <h1 data-l="en" lang="en">After the Beep<br>– Afterechoes</h1>
+
+            <p class="work-subtitle" data-l="fi">Jani Orbinski, 2026 · Monikanavainen ääniteos, 5 kaiutinta</p>
+            <p class="work-subtitle" data-l="en" lang="en">Jani Orbinski, 2026 · Multichannel sound work for five speakers</p>
+
+            <div class="work-body" data-l="fi">
                 <p>Vuoden 2025 Museoiden yössä kävijät saivat jättää viestin puhelinvastaajaan.
                 Viestejä kertyi 306. Niissä tervehditään, kerrotaan illasta, tunnustetaan
                 rakkautta, lauletaan, naurahdetaan ja ollaan hetken hiljaa.</p>
@@ -68,19 +77,49 @@
                 <p>Kiitos kaikille, jotka jättivät jälkensä.</p>
             </div>
 
+            <div class="work-body" data-l="en" lang="en">
+                <p>At Museums' Night in 2025, visitors were invited to leave a message on an
+                answering machine. 306 messages were left. In them people say hello, talk about
+                the evening, confess love, sing, laugh a little and fall silent for a moment.</p>
+
+                <p>It was once thought that sounds and messages travelled through the ether, an
+                invisible medium filling everything. The ether was never found. For these messages
+                the medium has been time: they set out a year ago and arrive only now, inside the
+                walls of Mikkeli's oldest building, the medieval stone sacristy. Alongside the
+                messages plays a composed soundworld drawn from the layers of time and from the
+                night. The sound circles the listener, and the space itself takes part in the
+                playing.</p>
+
+                <p>The work is built from random sampling and from loops that run at different
+                speeds and drift apart from one another. That is why it never sounds the same
+                twice. The messages and their words return. This moment, the one you are hearing
+                now, will not.</p>
+
+                <p>Thank you to everyone who left their trace.</p>
+            </div>
+
             <!-- Guestbook. Messages are sent privately to Jani and are not shown here. -->
             <section class="guestbook" id="vieraskirja">
-                <h2>Jätä jälkesi</h2>
-                <p class="guestbook-intro">Viesti äänimerkin jälkeen.</p>
+                <h2 data-l="fi">Jätä jälkesi</h2>
+                <h2 data-l="en" lang="en">Leave your trace</h2>
+
+                <p class="guestbook-intro" data-l="fi">Viesti äänimerkin jälkeen.</p>
+                <p class="guestbook-intro" data-l="en" lang="en">A message after the beep.</p>
 
                 <form id="guestbook-form" method="POST"
                     action="https://docs.google.com/forms/d/e/1FAIpQLSfXsaK8pifKLEOOeiF9lc-_p-12vP4_Y6T3MPyCFo5Q-Or_0g/formResponse"
                     target="gb-sink">
-                    <label for="gb-message">Viesti</label>
+                    <label for="gb-message">
+                        <span data-l="fi">Viesti</span>
+                        <span data-l="en" lang="en">Message</span>
+                    </label>
                     <textarea id="gb-message" name="entry.1763449201" rows="5" required
                         placeholder="Kirjoita tähän…"></textarea>
 
-                    <label for="gb-name">Nimi <span class="optional">(vapaaehtoinen)</span></label>
+                    <label for="gb-name">
+                        <span data-l="fi">Nimi <span class="optional">(vapaaehtoinen)</span></span>
+                        <span data-l="en" lang="en">Name <span class="optional">(optional)</span></span>
+                    </label>
                     <input type="text" id="gb-name" name="entry.2096403550" autocomplete="name">
 
                     <!-- Honeypot: hidden from people, tempting to bots -->
@@ -89,11 +128,15 @@
                         <input type="text" id="gb-company" name="_gotcha" tabindex="-1" autocomplete="off">
                     </div>
 
-                    <button type="submit" class="download-link">Lähetä</button>
+                    <button type="submit" class="download-link">
+                        <span data-l="fi">Lähetä</span>
+                        <span data-l="en" lang="en">Send</span>
+                    </button>
                     <p class="gb-status" id="gb-status" role="status" aria-live="polite"></p>
                 </form>
 
-                <p class="guestbook-note">Viestit tulevat vain teoksen tekijälle, eivätkä ne näy tällä sivulla.</p>
+                <p class="guestbook-note" data-l="fi">Viestit tulevat vain teoksen tekijälle, eivätkä ne näy tällä sivulla.</p>
+                <p class="guestbook-note" data-l="en" lang="en">Messages go only to the artist and are not shown on this page.</p>
 
                 <!-- The form posts into this hidden frame, so the visitor
                      stays on the page instead of landing on Google's
@@ -101,9 +144,14 @@
                 <iframe name="gb-sink" id="gb-sink" class="gb-sink" title="" tabindex="-1" aria-hidden="true"></iframe>
             </section>
 
-            <div class="work-credits">
+            <div class="work-credits" data-l="fi">
                 <p>Sävellys ja äänisuunnittelu: Jani Orbinski</p>
                 <p>Kiitos kaikille, jotka jättivät viestin vuonna 2025.</p>
+            </div>
+
+            <div class="work-credits" data-l="en" lang="en">
+                <p>Composition and sound design: Jani Orbinski</p>
+                <p>Thank you to everyone who left a message in 2025.</p>
             </div>
 
             <p class="work-back"><a href="index.html">janiorbinski.com</a></p>
@@ -116,17 +164,61 @@
 
     <script>
         (function () {
+            var body = document.body;
+
+            var TEXT = {
+                fi: {
+                    placeholder: 'Kirjoita tähän…',
+                    sending: 'Lähetetään…',
+                    thanks: 'Kiitos – jälkesi jäi talteen.'
+                },
+                en: {
+                    placeholder: 'Write here…',
+                    sending: 'Sending…',
+                    thanks: 'Thank you – your trace has been kept.'
+                }
+            };
+
+            var message = document.getElementById('gb-message');
             var form = document.getElementById('guestbook-form');
             var status = document.getElementById('gb-status');
             var sink = document.getElementById('gb-sink');
             var button = form && form.querySelector('button[type="submit"]');
+
+            // Only offer the language switch once scripting is confirmed;
+            // without it the page simply stays in Finnish
+            body.classList.add('has-lang-toggle');
+
+            function setLang(lang) {
+                body.setAttribute('data-lang', lang);
+                document.documentElement.setAttribute('lang', lang);
+                message.setAttribute('placeholder', TEXT[lang].placeholder);
+                [].forEach.call(document.querySelectorAll('[data-set-lang]'), function (btn) {
+                    var on = btn.getAttribute('data-set-lang') === lang;
+                    btn.classList.toggle('is-active', on);
+                    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+                });
+            }
+
+            [].forEach.call(document.querySelectorAll('[data-set-lang]'), function (btn) {
+                btn.addEventListener('click', function () {
+                    setLang(btn.getAttribute('data-set-lang'));
+                });
+            });
+
+            // Visitors whose phone is not set to Finnish start in English
+            setLang((navigator.language || 'fi').toLowerCase().indexOf('fi') === 0 ? 'fi' : 'en');
+
             if (!form) return;
 
             var sent = false;
 
+            function lang() { return body.getAttribute('data-lang') === 'en' ? 'en' : 'fi'; }
+
             function done() {
                 form.reset();
-                status.textContent = 'Kiitos – jälkesi jäi talteen.';
+                message.setAttribute('placeholder', TEXT[lang()].placeholder);
+                status.textContent = TEXT[lang()].thanks;
                 status.className = 'gb-status gb-status-ok';
                 button.style.display = 'none';
             }
@@ -148,7 +240,7 @@
 
                 sent = true;
                 button.disabled = true;
-                status.textContent = 'Lähetetään…';
+                status.textContent = TEXT[lang()].sending;
                 status.className = 'gb-status';
 
                 // Let the browser post into the hidden frame. If the frame
