@@ -77,11 +77,11 @@
                     action="https://docs.google.com/forms/d/e/1FAIpQLSfXsaK8pifKLEOOeiF9lc-_p-12vP4_Y6T3MPyCFo5Q-Or_0g/formResponse"
                     target="gb-sink">
                     <label for="gb-message">Viesti</label>
-                    <textarea id="gb-message" name="entry.MESSAGE_ID" rows="5" required
+                    <textarea id="gb-message" name="entry.1763449201" rows="5" required
                         placeholder="Kirjoita tähän…"></textarea>
 
                     <label for="gb-name">Nimi <span class="optional">(vapaaehtoinen)</span></label>
-                    <input type="text" id="gb-name" name="entry.NAME_ID" autocomplete="name">
+                    <input type="text" id="gb-name" name="entry.2096403550" autocomplete="name">
 
                     <!-- Honeypot: hidden from people, tempting to bots -->
                     <div class="gb-hp" aria-hidden="true">
@@ -139,14 +139,6 @@
             });
 
             form.addEventListener('submit', function (e) {
-                // Fail safe: don't post until the field ids are filled in
-                if (form.innerHTML.indexOf('entry.MESSAGE_ID') !== -1) {
-                    e.preventDefault();
-                    status.textContent = 'Vieraskirja avataan hetken kuluttua.';
-                    status.className = 'gb-status gb-status-error';
-                    return;
-                }
-
                 // Quietly swallow anything that filled the honeypot
                 if (form.querySelector('[name="_gotcha"]').value !== '') {
                     e.preventDefault();
