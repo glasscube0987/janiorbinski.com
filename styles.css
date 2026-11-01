@@ -1027,6 +1027,11 @@ body.has-lang-toggle .lang-toggle {
   transform: translateY(-2px);
 }
 
+/* display: block above would otherwise override the hidden attribute */
+.now-feature[hidden] {
+  display: none;
+}
+
 .now-feature .now-label {
   font-size: 0.75rem;
   font-weight: 600;
