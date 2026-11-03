@@ -1189,3 +1189,96 @@ body.has-lang-toggle .lang-toggle {
   padding: 0.2rem 0.45rem;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
 }
+/* Link-in-bio page (links.html): a single column of large buttons,
+   sized for a phone opened from an Instagram profile */
+main.links-page {
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 2.8rem 1.25rem 2.5rem;
+  background: none;
+  box-shadow: none;
+  text-align: center;
+}
+
+.links-page .card-photo {
+  width: 112px;
+  height: 112px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.links-page h1 {
+  font-size: clamp(1.9rem, 8vw, 2.3rem);
+  margin-bottom: 0.4rem;
+}
+
+.links-page .card-role {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+}
+
+.links-page .card-tagline {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  opacity: 0.75;
+  margin: 0.4rem 0 1.8rem;
+}
+
+.link-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.link-btn {
+  display: block;
+  padding: 0.95rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(102, 252, 241, 0.35);
+  background-color: var(--secondary-bg);
+  color: #f0f0f0;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.link-btn:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-1px);
+}
+
+.link-btn-primary {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--primary-bg);
+}
+
+.link-note {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  opacity: 0.7;
+  margin-top: 0.2rem;
+}
+
+.links-footer {
+  margin-top: 2rem;
+}
+
+.links-footer a {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: var(--accent-muted);
+  text-decoration: none;
+}
