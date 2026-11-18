@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palvelut | Jani Orbinski</title>
+    <meta name="description" content="Jani Orbinski – säveltäjä ja äänisuunnittelija. Äänisuunnittelu ja sävellys kuunnelmiin, dokumentteihin, teatteriin, museoihin ja vuorovaikutteisiin teoksiin. Studio Tuusulassa.">
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="fonts/Null-Normal.otf" as="font" type="font/otf" crossorigin="anonymous">
+    <style>
+        /* LUONNOS – palvelusivun omat tyylit. Siirretään styles.css:ään, kun sivu hyväksytään. */
+        .services { max-width: 46rem; }
+        .services .lead {
+            font-size: 1.15rem; font-weight: 300; line-height: 1.8;
+            text-align: center; margin: 0 auto 3rem; max-width: 34rem;
+        }
+        .services h2.section-title {
+            font-family: 'Raleway', sans-serif; font-size: 0.8rem; font-weight: 600;
+            letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-muted);
+            margin: 3.5rem 0 1.2rem; text-align: left;
+        }
+        .service-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+        @media (min-width: 700px) { .service-grid { grid-template-columns: 1fr 1fr; } }
+        .service-card {
+            background: var(--secondary-bg); border-radius: 10px;
+            padding: 1.4rem 1.4rem 1.2rem; border-top: 3px solid var(--accent-muted);
+        }
+        .service-card h3 {
+            font-family: 'Raleway', sans-serif; font-size: 1.15rem; font-weight: 700;
+            margin: 0 0 0.3rem; color: #fff; text-align: left;
+        }
+        .service-card .where {
+            font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+            color: var(--accent-muted); margin: 0 0 0.8rem;
+        }
+        .service-card p { font-size: 0.95rem; font-weight: 300; line-height: 1.7; margin: 0 0 0.8rem; }
+        .service-card .proof { font-size: 0.82rem; opacity: 0.7; margin: 0; }
+        .studio {
+            display: grid; grid-template-columns: 1fr; gap: 1.2rem; align-items: center;
+            background: var(--secondary-bg); border-radius: 10px; overflow: hidden;
+        }
+        @media (min-width: 700px) { .studio { grid-template-columns: 1fr 1.2fr; } }
+        .studio img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 220px; }
+        .studio .studio-text { padding: 1.2rem 1.4rem 1.4rem; }
+        .studio h3 { font-family: 'Raleway', sans-serif; font-size: 1.15rem; margin: 0 0 0.6rem; color: #fff; text-align: left; }
+        .studio p, .studio li { font-size: 0.95rem; font-weight: 300; line-height: 1.7; }
+        .studio ul { margin: 0; padding-left: 1.1rem; }
+        .steps { counter-reset: step; list-style: none; padding: 0; margin: 0; }
+        .steps li {
+            counter-increment: step; position: relative; padding: 0 0 1.1rem 2.6rem;
+            font-size: 0.98rem; font-weight: 300; line-height: 1.7;
+        }
+        .steps li::before {
+            content: counter(step); position: absolute; left: 0; top: 0.05rem;
+            width: 1.8rem; height: 1.8rem; border-radius: 50%; border: 1px solid var(--accent-muted);
+            color: var(--accent-muted); font-weight: 600; font-size: 0.85rem;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .steps strong { color: #fff; font-weight: 600; }
+        .cta {
+            text-align: center; margin: 4rem 0 1rem; padding: 2rem 1.4rem;
+            border: 1px solid rgba(102, 252, 241, 0.25); border-radius: 10px;
+        }
+        .cta h2 { font-family: 'Raleway', sans-serif; font-size: 1.4rem; margin: 0 0 0.6rem; }
+        .cta p { font-weight: 300; margin: 0 0 1.4rem; }
+        .cta-button {
+            display: inline-block; background: var(--accent-muted); color: var(--primary-bg);
+            font-weight: 700; letter-spacing: 0.04em; padding: 0.8rem 1.6rem;
+            border-radius: 999px; text-decoration: none;
+        }
+        .cta-button:hover { background: var(--accent-color); }
+        .draft-banner {
+            background: var(--accent-orange); color: #fff; text-align: center;
+            font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; padding: 0.5rem;
+        }
+    </style>
+</head>
+
+<body data-lang="fi">
+    <div class="draft-banner">LUONNOS – EI JULKAISTU</div>
+    <header class="header-compact">
+        <div class="headline-container">
+            <h1>JANI ORBINSKI</h1>
+            <h2 data-l="fi">Säveltäjä &amp; äänisuunnittelija</h2>
+            <h2 data-l="en" lang="en">Composer &amp; Sound Designer</h2>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" data-l="fi">Etusivu</a><a href="index.html" data-l="en" lang="en">Home</a></li>
+            <li><a href="index.html#gallery" data-l="fi">Teokset</a><a href="index.html#gallery" data-l="en" lang="en">Works</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li><a href="#yhteys" data-l="fi">Yhteys</a><a href="#yhteys" data-l="en" lang="en">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="work-text services">
+            <div class="lang-toggle" role="group" aria-label="Kieli / Language">
+                <button type="button" class="lang-btn is-active" data-set-lang="fi" lang="fi">Suomeksi</button>
+                <button type="button" class="lang-btn" data-set-lang="en" lang="en">In English</button>
+            </div>
+
+            <h1 data-l="fi">Tarinat äänellä</h1>
+            <h1 data-l="en" lang="en">Stories in sound</h1>
+
+            <p class="lead" data-l="fi">Teen äänestä ja musiikista dramaturgiaa: sitä, miten tarina etenee ajassa,
+                mihin kuulija kiinnittää huomionsa ja miltä hetki tuntuu. Kuulokkeisiin, näyttämölle,
+                tilaan ja vuorovaikutteisiin maailmoihin.</p>
+            <p class="lead" data-l="en" lang="en">I turn sound and music into dramaturgy: how a story moves in time,
+                where the listener's attention goes and how a moment feels. For headphones, the stage,
+                physical spaces and interactive worlds.</p>
+
+            <h2 class="section-title" data-l="fi">Mitä teen</h2>
+            <h2 class="section-title" data-l="en" lang="en">What I do</h2>
+
+            <div class="service-grid">
+                <section class="service-card">
+                    <h3 data-l="fi">Kuulokkeisiin</h3>
+                    <h3 data-l="en" lang="en">For headphones</h3>
+                    <p class="where" data-l="fi">Kuunnelmat · dokumentit · audiosarjat</p>
+                    <p class="where" data-l="en" lang="en">Audio drama · documentary · series</p>
+                    <p data-l="fi">Äänisuunnittelu, sävellys, editointi ja miksaus pitkiin audioteoksiin.
+                        Tarvittaessa myös dramaturgia, ohjaus ja kenttä-äänitys. Voin olla osa työryhmää tai
+                        vastata koko äänimaailmasta.</p>
+                    <p data-l="en" lang="en">Sound design, original music, editing and mixing for long-form audio.
+                        Dramaturgy, direction and field recording when needed. I can join a team or take care
+                        of the whole soundworld.</p>
+                    <p class="proof">Prix Europa 2022 · 2 × KOURA · 25+ Yle-tuotantoa / Yle productions</p>
+                </section>
+
+                <section class="service-card">
+                    <h3 data-l="fi">Näyttämölle</h3>
+                    <h3 data-l="en" lang="en">For the stage</h3>
+                    <p class="where" data-l="fi">Teatteri · tanssi · esitykset</p>
+                    <p class="where" data-l="en" lang="en">Theatre · dance · performance</p>
+                    <p data-l="fi">Äänisuunnittelu ja sävellys, jotka kulkevat dramaturgian rinnalla
+                        ensimmäisestä treenistä asti. Tilaääni, liveajo ja tekniikan suunnittelu.</p>
+                    <p data-l="en" lang="en">Sound design and composition that grow alongside the dramaturgy from
+                        the first rehearsal. Spatial sound, live operation and technical design.</p>
+                    <p class="proof">Åbo Svenska Teatern · Saimaan Teatteri · Q-teatteri · Teatteri Takomo</p>
+                </section>
+
+                <section class="service-card">
+                    <h3 data-l="fi">Tilaan</h3>
+                    <h3 data-l="en" lang="en">For spaces</h3>
+                    <p class="where" data-l="fi">Museot · näyttelyt · installaatiot</p>
+                    <p class="where" data-l="en" lang="en">Museums · exhibitions · installations</p>
+                    <p data-l="fi">Äänimaisemat, näyttelyaudio ja monikanavaiset ääniteokset, joissa tila on
+                        mukana soittamassa. Puheäänitykset ja kieliversiot omalla studiolla.</p>
+                    <p data-l="en" lang="en">Soundscapes, exhibition audio and multichannel sound works where the
+                        space itself takes part. Voice recordings and language versions in my own studio.</p>
+                    <p class="proof">Tiedemuseo Liekki · Museoiden yö, Mikkeli · Mikkelin Taidemuseo</p>
+                </section>
+
+                <section class="service-card">
+                    <h3 data-l="fi">Vuorovaikutteisiin maailmoihin</h3>
+                    <h3 data-l="en" lang="en">For interactive worlds</h3>
+                    <p class="where" data-l="fi">Generatiivinen ääni · pelit · omat työkalut</p>
+                    <p class="where" data-l="en" lang="en">Generative sound · games · custom tools</p>
+                    <p data-l="fi">Adaptiivinen musiikki, generatiiviset ääniteokset ja Max/MSP-ratkaisut,
+                        esimerkiksi esiintyjän liikkeellä ohjattu ääni.</p>
+                    <p data-l="en" lang="en">Adaptive music, generative sound works and Max/MSP solutions, such as
+                        sound driven by a performer's movement.</p>
+                    <p class="proof" data-l="fi">Prix Europa -palkittu kuunnelmapeli · Max for Live -laitteet</p>
+                    <p class="proof" data-l="en" lang="en">Prix Europa-winning interactive audio drama · Max for Live devices</p>
+                </section>
+            </div>
+
+            <h2 class="section-title" data-l="fi">Studio Tuusulassa</h2>
+            <h2 class="section-title" data-l="en" lang="en">Studio in Tuusula</h2>
+
+            <section class="studio">
+                <img src="images/jani_studiossa_pysty.jpg" alt="Jani Orbinski studiossa" loading="lazy">
+                <div class="studio-text">
+                    <h3 data-l="fi">Tarkkaamo ja erillinen soittotila</h3>
+                    <h3 data-l="en" lang="en">Control room and a separate live room</h3>
+                    <ul data-l="fi">
+                        <li>Puheäänitykset, spiikit ja kieliversiot (suomi, ruotsi, englanti)</li>
+                        <li>Lukijoiden ja näyttelijöiden ohjaus</li>
+                        <li>Musiikkiäänitykset ja sävellystyö: syntikat, piano ja analogiset nauhakoneet</li>
+                        <li>Editointi, miksaus ja masterointi</li>
+                    </ul>
+                    <ul data-l="en" lang="en">
+                        <li>Voice recordings and language versions (Finnish, Swedish, English)</li>
+                        <li>Directing voice actors and readers</li>
+                        <li>Music recording and composition: synths, piano and analogue tape</li>
+                        <li>Editing, mixing and mastering</li>
+                    </ul>
+                </div>
+            </section>
+
+            <h2 class="section-title" data-l="fi">Opetus ja luennot</h2>
+            <h2 class="section-title" data-l="en" lang="en">Teaching and talks</h2>
+            <p data-l="fi">Opetan studiotyöskentelyä ja äänisuunnittelua, ja vierailen mielelläni kursseilla
+                puhumassa äänidramaturgiasta ja dokumentaarisen materiaalin kanssa työskentelystä.
+                (Taideyliopiston Teatterikorkeakoulu 2026.)</p>
+            <p data-l="en" lang="en">I teach studio work and sound design, and I'm happy to visit courses to talk
+                about sound dramaturgy and working with documentary material.
+                (Uniarts Helsinki, Theatre Academy 2026.)</p>
+
+            <h2 class="section-title" data-l="fi">Miten työskentelen</h2>
+            <h2 class="section-title" data-l="en" lang="en">How I work</h2>
+            <ol class="steps" data-l="fi">
+                <li><strong>Kuuntelen ensin.</strong> Mitä teos haluaa sanoa, kenelle ja missä se kuullaan.</li>
+                <li><strong>Selkeä tarjous.</strong> Kerron, mitä hintaan sisältyy, montako korjauskierrosta on
+                    mukana ja mitä sovitaan erikseen. Ei yllätyksiä kummallekaan.</li>
+                <li><strong>Teen ääni edellä.</strong> Kuulet suunnan aikaisin, jolloin muutokset ovat helppoja.</li>
+                <li><strong>Viimeistelen ja toimitan</strong> sovituissa formaateissa ja ajallaan.</li>
+            </ol>
+            <ol class="steps" data-l="en" lang="en">
+                <li><strong>I listen first.</strong> What the work wants to say, to whom and where it will be heard.</li>
+                <li><strong>A clear quote.</strong> What's included, how many revision rounds and what's agreed
+                    separately. No surprises on either side.</li>
+                <li><strong>Sound first.</strong> You hear the direction early, while changes are still easy.</li>
+                <li><strong>Finished and delivered</strong> in the agreed formats, on time.</li>
+            </ol>
+
+            <section class="cta" id="yhteys">
+                <h2 data-l="fi">Kerro projektistasi</h2>
+                <h2 data-l="en" lang="en">Tell me about your project</h2>
+                <p data-l="fi">Muutama rivi riittää: mitä olet tekemässä, milloin ja missä se kuullaan.</p>
+                <p data-l="en" lang="en">A few lines are enough: what you're making, when, and where it will be heard.</p>
+                <a class="cta-button" data-l="fi" href="mailto:jani.orbinski@gmail.com?subject=Projekti">jani.orbinski@gmail.com</a>
+                <a class="cta-button" data-l="en" lang="en" href="mailto:jani.orbinski@gmail.com?subject=Project">jani.orbinski@gmail.com</a>
+            </section>
+
+            <p class="work-back"><a href="index.html">janiorbinski.com</a></p>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Jani Orbinski. All rights reserved.</p>
+    </footer>
+
+    <script>
+        (function () {
+            var body = document.body;
+            body.classList.add('has-lang-toggle');
+            function setLang(lang) {
+                body.setAttribute('data-lang', lang);
+                document.documentElement.setAttribute('lang', lang);
+                [].forEach.call(document.querySelectorAll('[data-set-lang]'), function (btn) {
+                    var on = btn.getAttribute('data-set-lang') === lang;
+                    btn.classList.toggle('is-active', on);
+                    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+                });
+            }
+            [].forEach.call(document.querySelectorAll('[data-set-lang]'), function (btn) {
+                btn.addEventListener('click', function () { setLang(btn.getAttribute('data-set-lang')); });
+            });
+            setLang((navigator.language || 'fi').toLowerCase().indexOf('fi') === 0 ? 'fi' : 'en');
+        })();
+    </script>
+</body>
+
+</html>
