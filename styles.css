@@ -1282,3 +1282,38 @@ main.links-page {
   color: var(--accent-muted);
   text-decoration: none;
 }
+
+/* Visitor quotes on the work page, in place of the hidden guestbook */
+.traces {
+  margin-top: 3.2rem;
+}
+
+.traces h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-muted);
+  text-align: left;
+  margin: 0 0 0.4rem;
+}
+
+.traces .traces-intro {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin: 0 0 1.6rem;
+}
+
+.traces blockquote {
+  margin: 0 0 1.5rem;
+  padding-left: 1.1rem;
+  border-left: 2px solid rgba(102, 252, 241, 0.45);
+}
+
+.traces blockquote p {
+  font-size: 1rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.7;
+  margin: 0;
+}
