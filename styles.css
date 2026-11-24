@@ -1434,3 +1434,367 @@ main.links-page {
   padding-top: 2.5rem;
   border-top: 1px solid rgba(197, 198, 199, 0.2);
 }
+
+/* CV page (cv.html): the CV written out as text, in Finnish and English */
+.cv {
+  max-width: 46rem;
+  margin: 0 auto;
+}
+
+.cv-head {
+  text-align: center;
+  padding-bottom: 2.2rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(197, 198, 199, 0.2);
+}
+
+.cv-head h1 {
+  font-size: clamp(2rem, 7vw, 3rem);
+  margin-bottom: 1.2rem;
+}
+
+.cv-head .cv-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.cv-head .cv-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-muted);
+  margin: 0.5rem 0 0;
+}
+
+.cv-head .cv-degree {
+  font-size: 0.9rem;
+  opacity: 0.75;
+  margin: 0.3rem 0 1.2rem;
+}
+
+.cv-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3rem 1.4rem;
+  font-size: 0.9rem;
+}
+
+.cv-contact a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.cv-download {
+  margin-top: 0;
+}
+
+.cv-head .cv-updated {
+  font-size: 0.75rem;
+  opacity: 0.6;
+  margin: 0.9rem 0 0;
+}
+
+.cv-section .cv-default-role {
+  font-size: 0.85rem;
+  font-style: italic;
+  opacity: 0.7;
+  margin: -0.6rem 0 1.2rem;
+}
+
+.cv-section h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-muted);
+  text-align: left;
+  margin: 0 0 1.2rem;
+}
+
+/* Works by year: the year in a narrow left column, works beside it */
+.cv-year {
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(197, 198, 199, 0.12);
+}
+
+.cv-year h3 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin: 0.1rem 0 0;
+}
+
+.cv-year ul,
+.cv-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cv-year li {
+  margin-bottom: 0.85rem;
+}
+
+.cv-year li:last-child {
+  margin-bottom: 0;
+}
+
+.cv-work {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #e6e6e6;
+}
+
+.cv-meta {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 300;
+  margin-top: 0.15rem;
+}
+
+.cv-note,
+.cv-award {
+  display: inline-block;
+  font-size: 0.75rem;
+  margin-top: 0.3rem;
+}
+
+.cv-note {
+  opacity: 0.7;
+}
+
+.cv-award {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--primary-bg);
+  background-color: var(--accent-color);
+  border-radius: 4px;
+  padding: 0.1rem 0.45rem;
+}
+
+.cv-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(197, 198, 199, 0.2);
+}
+
+.cv-columns h2 + p,
+.cv-columns h2 + ul {
+  margin-bottom: 2rem;
+}
+
+.cv-list li {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 0.9rem;
+}
+
+.cv-when {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-muted);
+}
+
+.cv-langs li {
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+
+.cv-langs li > span:last-child {
+  opacity: 0.7;
+}
+
+.cv-text {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+@media (max-width: 640px) {
+  .cv-columns {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .cv-year {
+    grid-template-columns: 3.2rem 1fr;
+    gap: 0.7rem;
+  }
+}
+
+/* Printing the CV page (and making the PDF from it): dark text on white,
+   site chrome removed, two-page A4 layout */
+@media print {
+  @page {
+    size: A4;
+    margin: 16mm 16mm 14mm;
+  }
+
+  body.cv-page {
+    background: #fff;
+    color: #1b2430;
+  }
+
+  body.cv-page > header,
+  body.cv-page > nav,
+  body.cv-page > footer,
+  body.cv-page .lang-toggle,
+  body.cv-page .cv-download,
+  body.cv-page #back-to-top {
+    display: none !important;
+  }
+
+  body.cv-page main {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    max-width: none;
+  }
+
+  body.cv-page .cv {
+    max-width: none;
+  }
+
+  body.cv-page .cv-head {
+    text-align: left;
+    padding-bottom: 5mm;
+    margin-bottom: 5mm;
+    border-bottom: 0.5pt solid #b9c2cc;
+  }
+
+  body.cv-page .cv-head h1 {
+    font-size: 22pt;
+    color: #0d1b2b;
+    text-align: left;
+    margin-bottom: 3mm;
+  }
+
+  body.cv-page .cv-name {
+    font-size: 15pt;
+    color: #0d1b2b;
+  }
+
+  body.cv-page .cv-title {
+    font-size: 8.5pt;
+    color: #1f7f79;
+  }
+
+  body.cv-page .cv-degree,
+  body.cv-page .cv-contact {
+    font-size: 9pt;
+    opacity: 1;
+    color: #3a4654;
+  }
+
+  body.cv-page .cv-contact {
+    justify-content: flex-start;
+    margin-bottom: 0;
+  }
+
+  body.cv-page .cv-contact a,
+  body.cv-page .cv-year h3,
+  body.cv-page .cv-when,
+  body.cv-page .cv-section h2 {
+    color: #1f7f79;
+  }
+
+  body.cv-page .cv-section h2 {
+    font-size: 9.5pt;
+    margin-bottom: 3mm;
+  }
+
+  body.cv-page .cv-updated {
+    display: none;
+  }
+
+  body.cv-page .cv-default-role {
+    font-size: 8pt;
+    color: #3a4654;
+    opacity: 1;
+    margin: -1.5mm 0 2.5mm;
+  }
+
+  body.cv-page .cv-year {
+    grid-template-columns: 14mm 1fr;
+    gap: 4mm;
+    padding: 1.7mm 0;
+    border-top: 0.5pt solid #dde2e7;
+  }
+
+  body.cv-page .cv-year li {
+    break-inside: avoid;
+  }
+
+  body.cv-page .cv-year h3 {
+    font-size: 9pt;
+  }
+
+  body.cv-page .cv-year li {
+    margin-bottom: 1mm;
+  }
+
+  /* Title and type on one line keeps the CV to two pages */
+  body.cv-page .cv-work {
+    display: inline;
+    font-size: 8.5pt;
+    color: #0d1b2b;
+  }
+
+  body.cv-page .cv-meta {
+    display: inline;
+    margin-left: 2mm;
+  }
+
+  body.cv-page .cv-note,
+  body.cv-page .cv-award {
+    margin-top: 0;
+    margin-left: 2mm;
+  }
+
+  body.cv-page .cv-meta,
+  body.cv-page .cv-list li,
+  body.cv-page .cv-text,
+  body.cv-page .cv-note {
+    font-size: 8.5pt;
+    font-weight: 400;
+    color: #3a4654;
+    opacity: 1;
+  }
+
+  body.cv-page .cv-award {
+    font-size: 7.5pt;
+    color: #fff;
+    background-color: #1f7f79;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body.cv-page .cv-columns {
+    grid-template-columns: 1fr 1fr;
+    gap: 10mm;
+    margin-top: 4mm;
+    padding-top: 4mm;
+    border-top: 0.5pt solid #b9c2cc;
+    break-inside: avoid;
+  }
+}
